@@ -1,4 +1,6 @@
-function App() {
+import React from "react";
+
+function App(props) {
   return <h1>YoGo</h1>;
 }
 
