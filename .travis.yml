@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - stable
+
+branches:
+  only:
+    - main
+    - master
+
+cache:
+  directory:
+    - node_modules/
+
+scripts:
+  - npm run lint
