@@ -1,0 +1,8 @@
+services:
+  - mongodb
+
+language: node_js
+node_js:
+  - "12"
+
+script: "npm install eslint && npm test"
