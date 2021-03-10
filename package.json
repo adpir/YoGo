@@ -16,7 +16,7 @@
     "eject": "react-scripts eject",
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "eslint \"**/*.js\""
   },
   "eslintConfig": {
     "extends": [
