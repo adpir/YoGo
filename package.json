@@ -38,4 +38,7 @@
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
   }
+<<<<<<< HEAD
 }
+=======
+>>>>>>> e4c3692531a465a5174c2abb4ba72f4d1aea4d35
