@@ -57,6 +57,46 @@ const activitySeed = [
     description: "Find a comfy spot and catch some zzz’s.",
     durationMinutes: 60,
   },
+  {
+    type: "Body",
+    name: "Stretch",
+    durationMinutes: 10,
+  },
+  {
+    type: "Body",
+    name: "Drink Water",
+    durationMinutes: 1,
+  },
+  {
+    type: "Social",
+    name: "Call a Friend",
+    durationMinutes: 15,
+  },
+  {
+    type: "Social",
+    name: "Go Out to Lunch",
+    durationMinutes: 90,
+  },
+  {
+    type: "Social",
+    name: "Visit a Museum",
+    durationMinutes: 120,
+  },
+  {
+    type: "Social",
+    name: "Cuddle a Pet",
+    durationMinutes: 15,
+  },
+  {
+    type: "Social",
+    name: "Mail a Card or Letter",
+    durationMinutes: 30,
+  },
+  {
+    type: "Social",
+    name: "Go to a Game Night",
+    durationMinutes: 120,
+  },
 ];
 
 db.SystemActivity.remove({})
