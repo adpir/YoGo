@@ -8,7 +8,7 @@ export default function CreateActivity() {
       <div className="quicksand-body w-full max-w-sm">
         <div className="relative flex items-center justify-center h-16">
           <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-            ACTIVITY
+            ACTIVITY NAME
           </button>
         </div>
         <div className="relative flex items-center justify-center h-16">
@@ -40,6 +40,11 @@ export default function CreateActivity() {
           >
             Notes
           </textarea>
+        </div>
+        <div className="relative flex items-center justify-center  m-2">
+          <p className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow">
+            CREATE!
+          </p>
         </div>
       </div>
     </>
