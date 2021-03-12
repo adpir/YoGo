@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.pacifico-title {
+    font-family: 'Pacifico', cursive;
+}
+
+.quicksand-body {
+    font-family: 'Quicksand', sans-serif;
+}

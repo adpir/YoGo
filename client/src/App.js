@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <h1 className="text-green-600 font-bold">YoGo</h1>
+      <h1 className="text-green-600 font-bold pacifico-title">YoGo</h1>
     </BrowserRouter>
   );
 }
