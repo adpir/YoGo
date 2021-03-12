@@ -1,7 +1,5 @@
 const router = require("express").Router();
 const systemActivityController = require("../../controllers/systemActivityController");
-const userActivityController = require("../../controllers/userActivityController");
-const userController = require("../../controllers/userController");
 
 // GET
 // Matches with "/api/activities/system/"
