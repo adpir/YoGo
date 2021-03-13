@@ -11,6 +11,8 @@ describe("Home page", () => {
     cy.get("button[data-test=login]")
       .should("be.visible")
       .get("button[data-test=create-account]")
-      .should("be.visible");
+      .should("be.visible")
+      .get("button[data-test=skip-login]")
+      .should("be.visible");      
   });
 });
