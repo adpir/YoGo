@@ -11,11 +11,32 @@ import LoginPage from "./pages/login-create-acct/index";
 import SelectActivity from "./pages/select-activity";
 import CreateAcct from "./pages/create-account";
 
-
 function App() {
   return (
     <BrowserRouter>
-      <LoginPage />
+      <Switch>
+        <Route path="/activity-info">
+          <ActivityInfo />
+        </Route>
+        <Route path="/create-account">
+          <CreateAcct />
+        </Route>
+        <Route path="/create-activity">
+          <CreateActivity />
+        </Route>
+        <Route path="/create-or-select">
+          <CreateOrSelect />
+        </Route>
+        <Route path="/day-schedule">
+          <DaySchedule />
+        </Route>
+        <Route path="/select-activity">
+          <SelectActivity />
+        </Route>
+        <Route path={["/"]}>
+          <LoginPage />
+        </Route>
+      </Switch>
     </BrowserRouter>
   );
 }

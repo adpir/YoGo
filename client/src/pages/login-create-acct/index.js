@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
+import { Link } from "react-router-dom";
 
 export default function LoginPage() {
   return (
@@ -34,7 +35,8 @@ export default function LoginPage() {
                 type="email"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Email address" data-test="login-email"
+                placeholder="Email address"
+                data-test="login-email"
               />
             </div>
             <div>
@@ -47,7 +49,8 @@ export default function LoginPage() {
                 type="password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password" data-test="login-password"
+                placeholder="Password"
+                data-test="login-password"
               />
             </div>
           </div>
@@ -58,7 +61,8 @@ export default function LoginPage() {
                 id="remember_me"
                 name="remember_me"
                 type="checkbox"
-                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" data-test="login-remember"
+                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                data-test="login-remember"
               />
               <label
                 htmlFor="remember_me"
@@ -81,7 +85,8 @@ export default function LoginPage() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" data-test="login-forgot-pw"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              data-test="login-forgot-pw"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                 {/* <!-- Heroicon name: solid/lock-closed --> */}
@@ -104,20 +109,22 @@ export default function LoginPage() {
           </div>
         </form>
         <div className="relative flex items-center justify-center h-16">
-          <button
+          <Link
+            to="/create-account"
             className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
             data-test="create-account"
           >
             CREATE ACCOUNT
-          </button>
+          </Link>
         </div>
         <div className="relative flex items-center justify-center h-16">
-          <button
+          <Link
+            to="/select-or-create"
             className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
             data-test="skip-login"
           >
             SKIP LOGIN FOR TESTING
-          </button>
+          </Link>
         </div>
       </div>
     </>
