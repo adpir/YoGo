@@ -31,6 +31,7 @@
     "test": "npm run lint && npm run cy",
     "lint": "eslint \"**/*.js\"",
     "cy": "cypress run",
+    "cy:show": "cypress run --headed",
     "cy:show_chrome": "cypress run --headed --browser chrome"
   },
   "repository": {
