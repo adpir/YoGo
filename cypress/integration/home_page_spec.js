@@ -8,10 +8,18 @@ describe("Home page", () => {
   });
 
   it("Login form loads on start", () => {
-    cy.get("button[data-test=login]")
+    cy.get("input[data-test=login-email]")
       .should("be.visible")
-      .get("button[data-test=create-account]")
-      .should("be.visible")           
+      .get("input[data-test=login-password]")
+      .should("be.visible")
+      .get("input[data-test=login-remember]")
+      .should("be.visible")
+      // .get("button[data-test=login-submit]")
+      // .should("be.visible")
+      // .get("button[data-test=create-account]")
+      // .should("be.visible")           
+      // .get("button[data-test=skip-login]")
+      // .should("be.visible")           
   });
   
   // it("Create account form loads correctly", () => {
