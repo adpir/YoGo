@@ -9,6 +9,7 @@ import CreateOrSelect from "./pages/create-select-activities";
 import DaySchedule from "./pages/day-schedule/index";
 import LoginPage from "./pages/login-create-acct/index";
 import SelectActivity from "./pages/select-activity";
+import CreateAcct from "./pages/create-account";
 
 
 function App() {
