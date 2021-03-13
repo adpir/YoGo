@@ -1,15 +1,11 @@
 import React from "react";
-  
+
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/index";
+import Register from "./components/AuthComps/Register";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <h1 className="text-green-600 font-bold">YoGo</h1>
-    </BrowserRouter>
-  );
+  return <Register />;
 }
 
 export default App;
