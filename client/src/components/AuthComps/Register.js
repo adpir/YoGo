@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 export default function SignUp() {
   const [user, setUser] = useState({
@@ -8,29 +9,34 @@ export default function SignUp() {
     password: "",
   });
 
+  const postData = async (url, data) => {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      mode: "no-cors",
+      credentials: "same-origin",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+    console.log(JSON.stringify(data));
+    console.log(response);
+    return response;
+  };
+
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios
-      .post("/api/user", {
-        username: user.username,
-        email: user.email,
-        password: user.password,
-      })
-      .then((res) => {
-        if (!res.data.errmsg) {
-          // redirect later
-          console.log("redirect to login");
-        } else {
-          // not successfull, add something later for a response
-          console.log("uh oh, login failed...");
-        }
-      })
-      .catch((err) => console.log("axios error", err));
+    postData("http://localhost:3001/api/user", {
+      username: user.username,
+      email: user.email,
+      password: user.password,
+    })
+      .then((data) => console.log(data))
+      .catch((err) => console.log("err", err));
   };
 
   return (

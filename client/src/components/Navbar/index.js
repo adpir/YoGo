@@ -64,7 +64,7 @@ export default function Navbar() {
           </div>
           <div className="flex-1 flex items-center justify-center">
             <div className="flex-shrink-0 flex items-center">
-              <h1 className="inline-flex py-6 px-3 mr-4 text-gray-600 hover:text-gray-300 text-4xl font-bold tracking-widest">
+              <h1 className="inline-flex py-6 px-3 mr-4 text-gray-600 hover:text-gray-300 text-4xl font-bold tracking-widest pacifico-title">
                 YOGO
               </h1>
               {/* <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow"/> */}

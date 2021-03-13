@@ -8,7 +8,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.21.1",
-    "bcrypt": "^5.0.1",
+    "cypress": "^6.6.0",
     "eslint": "^7.21.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
@@ -28,8 +28,11 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
-    "test": "npm run lint",
-    "lint": "eslint \"**/*.js\""
+    "test": "npm run lint && npm run cy",
+    "lint": "eslint \"**/*.js\"",
+    "cy": "cypress run",
+    "cy:show": "cypress run --headed",
+    "cy:show_chrome": "cypress run --headed --browser chrome"
   },
   "repository": {
     "type": "git",

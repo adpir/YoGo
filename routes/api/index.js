@@ -1,8 +1,15 @@
 const router = require("express").Router();
 const systemActivityRoutes = require("./systemActivities");
-const authenticationController = require("../../controllers/authenticationController");
+const userActivityRoutes = require("./userActivities");
+const userManagementRoutes = require("./userManagement");
 
-// Activity routes
+// System Activity Routes
 router.use("/", systemActivityRoutes);
+
+// User Activity Routes
+router.use("/", userActivityRoutes);
+
+// User Management Routes
+router.use("/", userManagementRoutes);
 
 module.exports = router;
