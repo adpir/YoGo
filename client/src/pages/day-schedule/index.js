@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar/index";
+import { Link } from "react-router-dom";
 
 export default function DaySchedule() {
   return (
@@ -15,9 +16,12 @@ export default function DaySchedule() {
           <button className="pacifico-title bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
             M
           </button>
-          <p className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow">
+          <Link
+            to="/activity-info"
+            className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow"
+          >
             Activity
-          </p>
+          </Link>
         </div>
         <div className="relative flex items-center justify-center h-16">
           <button className="pacifico-title bg-yellow-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
