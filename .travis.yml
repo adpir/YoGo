@@ -5,11 +5,15 @@ node_js:
 branches:
   only:
     - main
-    - master
 
 cache:
   directory:
     - node_modules/
 
 scripts:
-  - npm run lint
+  # Run start in the background
+  - npm run start &
+  - npm run test
+  # after all tests finish running we need
+  # to kill all background jobs (like "npm start &")
+  - kill $(jobs -p) || true
