@@ -18,6 +18,22 @@ const testUsers = [
     userName: "Tessdfty",
     email: "tusdsafer@testy.com",
     password: "dsjaasfdfasdkfjasdf",
+    firstName: "Testy",
+    lastName: "User",
+    email: "tuser@testy.com",
+    isAdmin: false,
+  },
+  {
+    firstName: "Testy",
+    lastName: "McTester",
+    email: "ttesty@testy.com",
+    isAdmin: false,
+  },
+  {
+    firstName: "Testy",
+    lastName: "Admin",
+    email: "tadmin@testy.com",
+    isAdmin: true,
   },
 ];
 

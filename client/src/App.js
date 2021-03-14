@@ -9,13 +9,36 @@ import CreateOrSelect from "./pages/create-select-activities";
 import DaySchedule from "./pages/day-schedule/index";
 import LoginPage from "./pages/login-create-acct/index";
 import SelectActivity from "./pages/select-activity";
-import SignUp from "../src/components/AuthComps/Register";
+import CreateAcct from "./pages/create-account";
 
 function App() {
   return (
     <BrowserRouter>
-      <Route exact path="/" component={LoginPage} />
-      <Route exact path="/register" component={SignUp} />
+      {/* <Route exact path="/" component={LoginPage} />
+      <Route exact path="/register" component={SignUp} /> */}
+      <Switch>
+        <Route path="/activity-info">
+          <ActivityInfo />
+        </Route>
+        <Route path="/create-account">
+          <CreateAcct />
+        </Route>
+        <Route path="/create-activity">
+          <CreateActivity />
+        </Route>
+        <Route path="/create-or-select">
+          <CreateOrSelect />
+        </Route>
+        <Route path="/day-schedule">
+          <DaySchedule />
+        </Route>
+        <Route path="/select-activity">
+          <SelectActivity />
+        </Route>
+        <Route path={["/"]}>
+          <LoginPage />
+        </Route>
+      </Switch>
     </BrowserRouter>
   );
 }
