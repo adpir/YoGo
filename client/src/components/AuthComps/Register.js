@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
+import api from "../../utils/api";
 
 export default function SignUp() {
   const [user, setUser] = useState({
@@ -9,34 +10,19 @@ export default function SignUp() {
     password: "",
   });
 
-  const postData = async (url, data) => {
-    const response = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(data),
-      mode: "no-cors",
-      credentials: "same-origin",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
-    console.log(JSON.stringify(data));
-    console.log(response);
-    return response;
-  };
-
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
+    console.log("setUser", user);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    postData("http://localhost:3001/api/user", {
-      username: user.username,
-      email: user.email,
-      password: user.password,
-    })
-      .then((data) => console.log(data))
-      .catch((err) => console.log("err", err));
+    api
+      .postUser(user)
+      .then((res) => {
+        console.log("api postUser data", res.data);
+      })
+      .catch((err) => console.log("api postUser err", err));
   };
 
   return (

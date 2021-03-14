@@ -11,7 +11,7 @@ router.route("/users/:id").get(userController.findById);
 // POST
 // Matches with "/api/users"
 // Wait to implement until there is some security around who can do this
-router.route("/user").post(userController.create);
+router.route("/users").post(userController.create);
 
 // PUT
 // Matches with "/api/users/:id"
