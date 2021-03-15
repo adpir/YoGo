@@ -2,7 +2,10 @@
   "name": "yogo",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": {
+    "target": "http://localhost:3001/",
+    "secure": false
+  },
   "dependencies": {
     "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.9",

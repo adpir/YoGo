@@ -30,6 +30,7 @@ const api = {
       .catch((err) => console.log(err));
   },
   getSystemActivitiesByType: function (type) {
+    // if type is all, get all activities
     if (type === "all") {
       return this.getSystemActivities();
     }
