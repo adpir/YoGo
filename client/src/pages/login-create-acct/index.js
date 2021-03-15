@@ -11,13 +11,6 @@ export default function LoginPage() {
           <h1 className="pacifico-title">Take Care Of Yourself...</h1>
         </div>
         <div className="relative flex items-center justify-center h-16">
-          {/* <button
-            className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-            data-test="login"
-          >
-            LOGIN
-          </button> */}
-
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Sign in
           </h2>
@@ -86,7 +79,7 @@ export default function LoginPage() {
             <button
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              data-test="login-forgot-pw"
+              data-test="sign-in-button"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                 {/* <!-- Heroicon name: solid/lock-closed --> */}
