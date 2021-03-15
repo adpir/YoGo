@@ -7,8 +7,14 @@ branches:
     - main
 
 cache:
-  directory:
-    - node_modules/
+  # cache both npm modules and Cypress binary
+  directories:
+    - ~/.npm
+    - ~/.cache
+  # install dependencies and check that Cypress can run
+  override:
+    - npm ci
+    - npm run cy:verify
 
 scripts:
   # Run start in the background
