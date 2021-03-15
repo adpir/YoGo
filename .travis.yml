@@ -18,6 +18,7 @@ cache:
 
 install: 
   - npm ci
+  - cypress install
 
 scripts:
   # Run start in the background
