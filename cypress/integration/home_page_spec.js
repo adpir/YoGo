@@ -28,6 +28,7 @@ describe("Smoke Tests", () => {
     cy.contains("CREATE!").should("be.visible");
   });
 
+  // Mind, Body, Social, All paths
   it("Select System Activity page loads with Mind, Body, Social, All buttons", () => {
     cy.get("[data-test=skip-login]").click();
     cy.get("[data-test=select-activity]").click();
@@ -37,15 +38,6 @@ describe("Smoke Tests", () => {
       .should("be.visible")
       .get("[data-test=select-all-activities]")
       .should("be.visible");
-  });
-
-  // Mind, Body, Social, All paths
-  it("Select System Activity Mind Activity Info page loads", () => {
-    cy.get("[data-test=skip-login]").click();
-    cy.get("[data-test=select-activity]").click();
-    cy.get(`[data-test=select-mind-activities]`).click();
-    cy.contains("TODAY IS THE DAY!").should("be.visible");
-    cy.url().should("include", `day-schedule/mind`);
   });
 
   const activityTypes = ["mind", "body", "social", "all"];
