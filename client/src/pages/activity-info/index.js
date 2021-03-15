@@ -4,14 +4,13 @@ import CircleButton from "../../components/CircleButton";
 import Navbar from "../../components/Navbar/index";
 import api from "../../utils/api";
 
-export default function ActivityInfo() {
+function ActivityInfo() {
   const [activity, setActivity] = useState({});
   const { id } = useParams();
   useEffect(() => {
     api
       .getSystemActivityById(id)
       .then((data) => {
-        console.log("activity info data", data);
         setActivity(data);
       })
       .catch((err) => console.log(err));
@@ -39,7 +38,7 @@ export default function ActivityInfo() {
           </label>
           <p
             className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow"
-            data-test="activity-duration-value"
+            data-test="activity-info-duration"
           >
             {activity.durationMinutes}m
           </p>
@@ -59,3 +58,5 @@ export default function ActivityInfo() {
     </>
   );
 }
+
+export default ActivityInfo;

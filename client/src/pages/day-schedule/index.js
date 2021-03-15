@@ -28,7 +28,11 @@ function DaySchedule() {
         </div>
         {activities.map((activity) => {
           return (
-            <Link to={"/activity-info/" + activity._id} key={activity._id}>
+            <Link
+              to={"/activity-info/" + activity._id}
+              key={activity._id}
+              data-test="day-schedule-activity"
+            >
               <div className="relative flex items-center justify-center h-16">
                 <CircleButton activityType={activity.type} />
                 <p className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow">
