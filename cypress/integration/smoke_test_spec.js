@@ -50,4 +50,17 @@ describe("Smoke Tests", () => {
       cy.url().should("include", `day-schedule/${activity}`);
     });
   });
+
+  it("Activity Info page loads correctly", () => {
+    cy.get("[data-test=skip-login]").click();
+    cy.get("[data-test=select-activity]").click();
+    cy.get(`[data-test=select-all-activities]`).click();
+    cy.get("[data-test=day-schedule-activity]").first().click();
+    cy.get("[data-test=activity-info-name]")
+      .should("be.visible")
+      .get("[data-test=activity-info-duration]")
+      .should("be.visible")
+      .get("[data-test=activity-info-description]")
+      .should("be.visible");
+  });
 });
