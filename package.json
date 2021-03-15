@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3001",
+      "secure": false
+    }
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",

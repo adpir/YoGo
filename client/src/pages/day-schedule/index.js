@@ -12,7 +12,6 @@ function DaySchedule() {
     api
       .getSystemActivitiesByType(type)
       .then((data) => {
-        console.log("system by type data", data);
         setActivities(data);
       })
       .catch((err) => console.log(err));
