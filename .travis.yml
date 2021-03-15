@@ -21,10 +21,12 @@ cache:
     - ~/.cache
 install:
   - npm ci
-
+services:
+  - mongodb
 scripts:
   # Run start in the background
   - npm run start &
+  - npm run seed
   - npm run test
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
