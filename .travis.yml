@@ -17,6 +17,7 @@ cache:
     - npm run cy:verify
 
 scripts:
+  - npm ci
   # Run start in the background
   - npm run start &
   - npm run test
