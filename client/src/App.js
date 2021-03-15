@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/activity-info">
+        <Route path="/activity-info/:id">
           <ActivityInfo />
         </Route>
         <Route path="/create-account">
@@ -27,9 +27,10 @@ function App() {
         <Route path="/create-or-select">
           <CreateOrSelect />
         </Route>
-        <Route path="/day-schedule">
+        <Route path="/day-schedule/:type" component={DaySchedule} />
+        {/* <Route path="/day-schedule">
           <DaySchedule />
-        </Route>
+        </Route> */}
         <Route path="/select-activity">
           <SelectActivity />
         </Route>
