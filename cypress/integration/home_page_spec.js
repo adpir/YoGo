@@ -3,7 +3,7 @@ beforeEach(() => {
 });
 
 describe("Smoke Tests", () => {
-  it("YGOO Header Loads", () => {
+  it("YOGO Header Loads", () => {
     cy.get("h1").should("be.visible").and("contain", "YOGO");
   });
 
