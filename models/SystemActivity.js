@@ -6,6 +6,7 @@ const SystemActivitySchema = new Schema({
   type: {
     type: String,
     trim: true,
+    lowercase: true,
   },
   name: {
     type: String,
