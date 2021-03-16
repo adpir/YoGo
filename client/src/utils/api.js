@@ -68,7 +68,11 @@ const api = {
             social.push(res[i]);
           }
         };
-        
+
+        shuffle(mind);
+        shuffle(body);
+        shuffle(social);
+
         twoOfEach.push(mind[0]);
         twoOfEach.push(body[0]);
         twoOfEach.push(social[0]);
@@ -80,13 +84,11 @@ const api = {
       }
 
       );
-      
-      return this.getSystemActivities();
     }
     return axios
       .get("/api/activities/system/?type=" + type)
       .then((res) => {
-        return res.data.slice(0, maxActivitiesReturned);
+        return res.data;
       })
       .catch((err) => console.log(err));
   },
