@@ -1,4 +1,5 @@
 import axios from "axios";
+const maxActivitiesReturned = 3;
 
 const headers = {
   "Content-Type": "text/json",
@@ -25,7 +26,6 @@ const shuffle = function (array) {
   return array;
 }
 
-const maxActivitiesReturned = 3;
 
 const api = {
   postUser: function (data) {
