@@ -8,67 +8,69 @@ export default function Navbar() {
     <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-yellow-100">
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <a className="inline-flex py-6 px-3 mr-4 text-gray-600 hover:text-gray-300 text-4xl font-bold tracking-widest pacifico-title">YOGO</a>
+          <Link to="/">
+            <h1 className="inline-flex py-6 px-3 mr-4 text-gray-600 hover:text-gray-300 text-4xl font-bold tracking-widest pacifico-title">
+              YOGO
+            </h1>
+          </Link>
           <button
-              className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              <i className="fas fa-bars"></i>
-            </button>
-            </div>
-            <div
-            className={
-              "lg:flex flex-grow items-center" +
-              (navbarOpen ? " flex" : " hidden")
-            }
-            id="example-navbar-danger"
+            className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            type="button"
+            onClick={() => setNavbarOpen(!navbarOpen)}
           >
-            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              <li className="nav-item">
-                <a
-                  href="#"
-                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Dashboard
-                </a>
-              </li>
-              <li className="nav-item">
+            <i className="fas fa-bars"></i>
+          </button>
+        </div>
+        <div
+          className={
+            "lg:flex flex-grow items-center" +
+            (navbarOpen ? " flex" : " hidden")
+          }
+          id="example-navbar-danger"
+        >
+          <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+            <li className="nav-item">
               <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Create Account
-                </a>
-              </li>
-              <li className="nav-item">
+                href="#"
+                className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li className="nav-item">
               <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Sign In
-                </a>
-              </li>
-
-
-            </ul>
+                href="#"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Create Account
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                href="#"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Sign In
+              </a>
+            </li>
+          </ul>
           {/* <div className="absolute inset-y-0 left-0 flex items-center "> */}
-            {/* <!-- Mobile menu button--> */}
-            {/* <button
+          {/* <!-- Mobile menu button--> */}
+          {/* <button
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span> */}
-              {/* <!--
+          {/* <!--
             Icon when menu is closed.
 
             Heroicon name: outline/menu
 
             Menu open: "hidden", Menu closed: "block"
           --> */}
-              {/* <svg
+          {/* <svg
                 className="block h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -83,14 +85,14 @@ export default function Navbar() {
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg> */}
-              {/* <!--
+          {/* <!--
             Icon when menu is open.
 
             Heroicon name: outline/x
 
             Menu open: "block", Menu closed: "hidden"
           --> */}
-              {/* <svg
+          {/* <svg
                 className="hidden h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -109,17 +111,12 @@ export default function Navbar() {
           {/* </div>
           <div className="flex-1 flex items-center justify-center">
             <div className="flex-shrink-0 flex items-center"> */}
-              {/* <Link to="/">
-                <h1 className="inline-flex py-6 px-3 mr-4 text-gray-600 hover:text-gray-300 text-4xl font-bold tracking-widest pacifico-title">
-                  YOGO
-                </h1>
-              </Link> */}
-              {/* <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow"/> */}
-            {/* </div>
+          {/* <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow"/> */}
+          {/* </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4"> */}
-                {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                {/* <a
+          {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
+          {/* <a
                   href="#"
                   className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
@@ -141,10 +138,10 @@ export default function Navbar() {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"> */}
-            {/* <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+          {/* <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
               <span className="sr-only">View notifications</span> */}
-              {/* <!-- Heroicon name: outline/bell --> */}
-              {/* <svg
+          {/* <!-- Heroicon name: outline/bell --> */}
+          {/* <svg
                 className="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -161,10 +158,10 @@ export default function Navbar() {
               </svg>
             </button> */}
 
-            {/* <!-- Profile dropdown --> */}
-            {/* <div className="ml-3 relative">
+          {/* <!-- Profile dropdown --> */}
+          {/* <div className="ml-3 relative">
               <div> */}
-                {/* <button
+          {/* <button
                   type="button"
                   className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                   id="user-menu"
@@ -178,9 +175,9 @@ export default function Navbar() {
                     alt=""
                   />
                 </button> */}
-              {/* </div> */}
+          {/* </div> */}
 
-              {/* <!--
+          {/* <!--
             Dropdown menu, show/hide based on menu state.
 
             Entering: "transition ease-out duration-100"
@@ -190,29 +187,29 @@ export default function Navbar() {
               From: "transform opacity-100 scale-100"
               To: "transform opacity-0 scale-95"
           --> */}
-              {/* <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+          {/* <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
             <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your Profile</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
           </div> */}
-            {/* </div>
+          {/* </div>
           </div>
         </div>
       </div> */}
 
-      {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-      {/* <div className="sm:hidden" id="mobile-menu">
+          {/* <!-- Mobile menu, show/hide based on menu state. --> */}
+          {/* <div className="sm:hidden" id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1"> */}
           {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
           {/* <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
       <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
       <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
       <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a> */}
-        {/* </div>
+          {/* </div>
       </div>
     </nav> */}
-    </div>
-    </div>
+        </div>
+      </div>
     </nav>
   );
 }
