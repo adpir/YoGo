@@ -42,8 +42,35 @@ const activitySeed = [
     durationMinutes: 30,
   },
   {
+    type: "mind",
+    name: "Take a Moment",
+    description: "Take a moment to think about some things you appreciate about yourself",
+    durationMinutes: 2,
+  },
+  {
+    type: "mind",
+    name: "Breathe",
+    description:
+      "Take some time to do some deep breathing.",
+    durationMinutes: 5,
+  },
+  {
+    type: "mind",
+    name: "Listen to Music",
+    description:
+      "Make a playlist or select one that will support your process today.",
+    durationMinutes: 30,
+  },
+  {
+    type: "mind",
+    name: "Watch a Movie",
+    description:
+      "Find a movie that brings you joy or comfort",
+    durationMinutes: 120,
+  },
+  {
     type: "body",
-    name: "Go for a walk/Get outside",
+    name: "Go for a Walk/Get outside",
     description: "Take a journey around the neighborhood.",
     durationMinutes: 30,
   },
@@ -70,6 +97,27 @@ const activitySeed = [
     durationMinutes: 1,
   },
   {
+    type: "body",
+    name: "Exercise",
+    durationMinutes: 60,
+  },
+  {
+    type: "body",
+    name: "Go for a Run/Jog",
+    durationMinutes: 20,
+  },
+  {
+    type: "body",
+    name: "Take a hot shower/bath",
+    description: "Get clean and relax.",
+    durationMinutes: 15,
+  },
+  {
+    type: "body",
+    name: "Try Yoga",
+    durationMinutes: 20,
+  },
+  {
     type: "social",
     name: "Call a Friend",
     durationMinutes: 15,
@@ -86,7 +134,7 @@ const activitySeed = [
   },
   {
     type: "social",
-    name: "Cuddle a Pet",
+    name: "Cuddle a pet",
     durationMinutes: 15,
   },
   {
@@ -97,6 +145,17 @@ const activitySeed = [
   {
     type: "social",
     name: "Go to a Game Night",
+    durationMinutes: 120,
+  },
+  {
+    type: "social",
+    name: "Have a Happy Hour with Friends",
+    durationMinutes: 120,
+  },
+  {
+    type: "social",
+    name: "Share Some Affirmations",
+    description: "Call a family member or a friend and share some positive statements with them.",
     durationMinutes: 120,
   },
 ];
