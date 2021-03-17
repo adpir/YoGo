@@ -5,7 +5,9 @@ const headers = {
 };
 
 const shuffle = function (array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+  let currentIndex = array.length;
+  let temporaryValue;
+  let randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
