@@ -18,16 +18,22 @@ function App() {
     username: "",
   });
 
+  // pass down into child for access
   const updateUser = (user) => {
     setUser(user);
   };
 
+  // pass down into child for access
+  const getUser = (user) => {
+    return user;
+  };
+
   useEffect(() => {
-    axios.get("/user/").then((res) => {
+    axios.get("/api/user").then((res) => {
       if (res.data.user) {
         console.log("there is a user in session");
 
-        setUser({ logedIn: true, username: res.data.user.username });
+        setUser({ loggedIn: true, username: res.data.user.username });
       } else {
         console.log("no user");
 
@@ -45,9 +51,7 @@ function App() {
       />
       <Route exact path="/register" component={CreateAcct} />
       <Switch>
-        <Route path="/activity-info">
-          <ActivityInfo />
-        </Route>
+        <Route path="/activity-info/:id" component={ActivityInfo} />
         <Route path="/create-account">
           <CreateAcct />
         </Route>
@@ -57,9 +61,7 @@ function App() {
         <Route path="/create-or-select">
           <CreateOrSelect />
         </Route>
-        <Route path="/day-schedule">
-          <DaySchedule />
-        </Route>
+        <Route path="/day-schedule/:type" component={DaySchedule} />
         <Route path="/select-activity">
           <SelectActivity />
         </Route>

@@ -13,16 +13,13 @@ export default function CreateAcct() {
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
-    console.log("setUser", user);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     api
       .postUser(user)
-      .then((res) => {
-        console.log("api postUser data", res.data);
-      })
+      .then((res) => {})
       .catch((err) => console.log("api postUser err", err));
   };
 

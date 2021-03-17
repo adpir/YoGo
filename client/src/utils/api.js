@@ -4,14 +4,42 @@ const headers = {
   "Content-Type": "text/json",
 };
 
+const maxActivitiesReturned = 6;
+
 const api = {
   postUser: function (data) {
-    console.log("req postUser data", data);
     return axios.post("/api/users", { data }).then((res) => {
       const responseData = res.data;
-      console.log("responseData", responseData);
       return responseData;
     });
+  },
+  getSystemActivities: function () {
+    return axios
+      .get("/api/activities/system")
+      .then((res) => {
+        return res.data.slice(0, maxActivitiesReturned);
+      })
+      .catch((err) => console.log(err));
+  },
+  getSystemActivityById: function (id) {
+    return axios
+      .get("/api/activities/system/" + id)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => console.log(err));
+  },
+  getSystemActivitiesByType: function (type) {
+    // if type is all, get all activities
+    if (type === "all") {
+      return this.getSystemActivities();
+    }
+    return axios
+      .get("/api/activities/system/?type=" + type)
+      .then((res) => {
+        return res.data.slice(0, maxActivitiesReturned);
+      })
+      .catch((err) => console.log(err));
   },
 };
 
