@@ -25,7 +25,7 @@ const shuffle = function (array) {
   return array;
 }
 
-const maxActivitiesReturned = 6;
+const maxActivitiesReturned = 3;
 
 const api = {
   postUser: function (data) {
@@ -80,9 +80,7 @@ const api = {
         oneOfEach.push(social[0]);
         
         return oneOfEach;
-      }
-
-      );
+      });
     }
 
     if (type === "mind") {
@@ -93,7 +91,7 @@ const api = {
           }
         }
         shuffle(mind);
-        let sliced = mind.slice(0, 3);
+        let sliced = mind.slice(0, maxActivitiesReturned);
         return sliced;
       });
     }
@@ -106,7 +104,7 @@ const api = {
           }
         }
         shuffle(body);
-        let sliced = body.slice(0, 3);
+        let sliced = body.slice(0, maxActivitiesReturned);
         return sliced;
       });      
     }
@@ -119,7 +117,7 @@ const api = {
           }
         }
         shuffle(social);
-        let sliced = social.slice(0, 3);
+        let sliced = social.slice(0, maxActivitiesReturned);
         return sliced;
       });
     }
