@@ -5,6 +5,19 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/yogodb");
 
 const testUsers = [
   {
+    userName: "Testy",
+    email: "tuser@testy.com",
+    password: "dsjafasdkfjasdf",
+  },
+  {
+    userName: "Tessadfty",
+    email: "tussdafer@testy.com",
+    password: "dsjafasdafsdkfjasdf",
+  },
+  {
+    userName: "Tessdfty",
+    email: "tusdsafer@testy.com",
+    password: "dsjaasfdfasdkfjasdf",
     firstName: "Testy",
     lastName: "User",
     email: "tuser@testy.com",

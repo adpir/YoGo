@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/index";
 import CircleButton from "./components/CircleButton";
@@ -10,10 +10,46 @@ import DaySchedule from "./pages/day-schedule/index";
 import LoginPage from "./pages/login-create-acct/index";
 import SelectActivity from "./pages/select-activity";
 import CreateAcct from "./pages/create-account";
+import axios from "axios";
 
 function App() {
+  const [user, setUser] = useState({
+    loggedIn: false,
+    username: "",
+  });
+
+  // pass down into child for access
+  const updateUser = (user) => {
+    setUser(user);
+  };
+
+  // pass down into child for access
+  const getUser = (user) => {
+    return user;
+  };
+
+  useEffect(() => {
+    axios.get("/api/user").then((res) => {
+      if (res.data.user) {
+        console.log("there is a user in session");
+
+        setUser({ loggedIn: true, username: res.data.user.username });
+      } else {
+        console.log("no user");
+
+        setUser({ ...user, loggedIn: false });
+      }
+    });
+  }, []);
+
   return (
     <BrowserRouter>
+      <Route
+        exact
+        path="/"
+        render={() => <LoginPage updateUser={updateUser} />}
+      />
+      <Route exact path="/register" component={CreateAcct} />
       <Switch>
         <Route path="/activity-info/:id" component={ActivityInfo} />
         <Route path="/create-account">
@@ -28,9 +64,6 @@ function App() {
         <Route path="/day-schedule/:type" component={DaySchedule} />
         <Route path="/select-activity">
           <SelectActivity />
-        </Route>
-        <Route path={["/"]}>
-          <LoginPage />
         </Route>
       </Switch>
     </BrowserRouter>

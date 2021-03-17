@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
+import api from "../../utils/api";
 
 export default function CreateAcct() {
+  const [user, setUser] = useState({
+    first_name: "",
+    last_name: "",
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    api
+      .postUser(user)
+      .then((res) => {})
+      .catch((err) => console.log("api postUser err", err));
+  };
+
   return (
     <>
       <Navbar />
@@ -16,7 +37,7 @@ export default function CreateAcct() {
             </div>
           </div>
           <div className="mt-5 md:mt-0 md:col-span-2">
-            <form action="#" method="POST">
+            <form>
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
@@ -29,8 +50,10 @@ export default function CreateAcct() {
                       </label>
                       <input
                         type="text"
-                        name="userName"
-                        id="userName"
+                        name="username"
+                        id="username"
+                        value={user.username}
+                        onChange={(e) => handleChange(e)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         data-test="user-name"
                       />
@@ -47,8 +70,10 @@ export default function CreateAcct() {
                         type="text"
                         name="first_name"
                         id="first_name"
+                        value={user.first_name}
+                        onChange={(e) => handleChange(e)}
+                        data-test="first_name"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                        data-test="first-name"
                       />
                     </div>
 
@@ -63,8 +88,10 @@ export default function CreateAcct() {
                         type="text"
                         name="last_name"
                         id="last_name"
+                        value={user.last_name}
+                        onChange={(e) => handleChange(e)}
+                        data-test="last_name"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                        data-test="last-name"
                       />
                     </div>
 
@@ -77,8 +104,10 @@ export default function CreateAcct() {
                       </label>
                       <input
                         type="text"
-                        name="email_address"
-                        id="email_address"
+                        name="email"
+                        id="email"
+                        value={user.email}
+                        onChange={(e) => handleChange(e)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         data-test="email"
                       />
@@ -92,9 +121,11 @@ export default function CreateAcct() {
                         Password
                       </label>
                       <input
-                        type="text"
+                        type="password"
                         name="password"
                         id="password"
+                        value={user.password}
+                        onChange={(e) => handleChange(e)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         data-test="password"
                       />
@@ -105,6 +136,8 @@ export default function CreateAcct() {
                       type="submit"
                       className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       data-test="create-account-button"
+                      onClick={(e) => handleSubmit(e)}
+                      type="submit"
                     >
                       Create Account!
                     </button>
