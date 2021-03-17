@@ -20,6 +20,7 @@ export default function CreateAcct() {
     api
       .postUser(user)
       .then((res) => {})
+      .then(() => (window.location = "/"))
       .catch((err) => console.log("api postUser err", err));
   };
 
