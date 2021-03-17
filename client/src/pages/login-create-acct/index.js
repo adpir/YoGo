@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
+import NavbarSignIn from "../../components/NavbarSignIn";
 
 export default function LoginPage(props) {
   const [user, setUser] = useState({
@@ -40,7 +40,7 @@ export default function LoginPage(props) {
   } else {
     return (
       <>
-        <Navbar />
+        <NavbarSignIn />
         <div className="w-full max-w-sm quicksand-body">
           <div className="relative flex items-center justify-center h-16">
             <h1 className="pacifico-title">Take Care Of Yourself...</h1>
