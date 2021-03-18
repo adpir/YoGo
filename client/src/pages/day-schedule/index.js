@@ -19,10 +19,17 @@ function DaySchedule() {
   }, []);
   
   function handleOnDragEnd(result) {
+    //handle errors caused by dragging off screen
+    if (!result.destination) return;
+
+    //make copy of activities array
     const items = Array.from(activities);
+    //use source.index to fund our item from new array and remove/destructure it
     const [reorderedItem] = items.splice(result.source.index, 1);
+    //add that item back into the array, at its new location(destination.index)
     items.splice(result.destination.index, 0, reorderedItem);
 
+    //update our activities state
     setActivities(items);
   };
 
