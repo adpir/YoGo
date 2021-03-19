@@ -37,25 +37,24 @@ const UserSchema = new Schema({
   // },
 });
 
-UserSchema.methods = {
-  checkPassword: function (inputPassword) {
-    return bcrypt.compareSync(inputPassword, this.password);
-  },
-  hashPassword: (plainTextPassword) => {
-    return bcrypt.hashSync(plainTextPassword, 10);
-  },
-};
-
-// temporarily removed isAdmin for auth implementation
-UserSchema.pre("save", function (next) {
-  // didnt provide password
-  if (!this.password) {
-    next();
-  } else {
-    this.password = this.hashPassword(this.password);
-    next();
+// Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
+UserSchema.pre("save", async function (next) {
+  const user = this;
+  if (user.isModified("password")) {
+    user.password = await bcrypt.hash(user.password, 8);
   }
+
+  next();
 });
+
+UserSchema.methods.isPasswordValid = function (rawPassword, callback) {
+  bcrypt.compare(rawPassword, this.password, function (err, same) {
+    if (err) {
+      callback(err);
+    }
+    callback(null, same);
+  });
+};
 
 const User = mongoose.model("User", UserSchema);
 
