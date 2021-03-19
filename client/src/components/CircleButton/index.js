@@ -2,7 +2,6 @@
 import React from "react";
 
 function CircleButton(props) {
-  console.log("props", props);
   return (
     <button className="pacifico-title bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
       {/* TODO: fix the props passing of info here. Currenly renders 'Y' unless
