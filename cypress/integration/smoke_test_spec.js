@@ -1,5 +1,5 @@
 beforeEach(() => {
-  cy.exec("npm run seed:user");
+  cy.exec("npm run seed:users");
   cy.visit("/");
   cy.get("input[data-test=login-email]").type("testy@testy.com");
   cy.get("input[data-test=login-password]").type("123123");
