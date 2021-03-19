@@ -12,7 +12,6 @@ const shuffle = function (array) {
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
-
     // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
@@ -24,8 +23,7 @@ const shuffle = function (array) {
   }
 
   return array;
-}
-
+};
 
 const api = {
   postUser: function (data) {
@@ -34,7 +32,14 @@ const api = {
       return responseData;
     });
   },
-
+  postActivity: function (data) {
+    return axios
+      .post("/api/activities/user", data)
+      .then((res) => {
+        return res;
+      })
+      .catch((err) => console.log("postActivity err", err));
+  },
   getSystemActivities: function () {
     return axios
       .get("/api/activities/system")
@@ -43,7 +48,22 @@ const api = {
       })
       .catch((err) => console.log(err));
   },
-
+  getCurrentUser: function () {
+    return axios
+      .get("/api/user")
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => console.log("getCurrentUser error", err));
+  },
+  getUserIdByEmail: function (email) {
+    return axios
+      .get("/api/users/?email=" + email)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => console.log("getUserIdByEmail error", err));
+  },
   getSystemActivityById: function (id) {
     return axios
       .get("/api/activities/system/" + id)
@@ -52,7 +72,22 @@ const api = {
       })
       .catch((err) => console.log(err));
   },
-
+  getUserActivityById: function (id) {
+    return axios
+      .get("/api/activities/user-activity/" + id)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => console.log(err));
+  },
+  getUserActivities: function (userId) {
+    return axios
+      .get("/api/activities/user/" + userId)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => console.log(err));
+  },
   getSystemActivitiesByType: function (type) {
     let mind = [];
     let body = [];
@@ -69,7 +104,7 @@ const api = {
           } else {
             social.push(res[i]);
           }
-        };
+        }
 
         shuffle(mind);
         shuffle(body);
@@ -78,7 +113,7 @@ const api = {
         oneOfEach.push(mind[0]);
         oneOfEach.push(body[0]);
         oneOfEach.push(social[0]);
-        
+
         return oneOfEach;
       });
     }
@@ -95,7 +130,7 @@ const api = {
         return sliced;
       });
     }
-    
+
     if (type === "body") {
       return this.getSystemActivities().then((res) => {
         for (let i = 0; i < res.length; i++) {
@@ -106,9 +141,9 @@ const api = {
         shuffle(body);
         let sliced = body.slice(0, maxActivitiesReturned);
         return sliced;
-      });      
+      });
     }
-    
+
     if (type === "social") {
       return this.getSystemActivities().then((res) => {
         for (let i = 0; i < res.length; i++) {
