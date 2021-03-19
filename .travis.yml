@@ -25,6 +25,7 @@ services:
   - mongodb
 scripts:
   # Run start in the background
+  - npm run build
   - npm run seed:users
   - npm run seed
   - npm run start &
