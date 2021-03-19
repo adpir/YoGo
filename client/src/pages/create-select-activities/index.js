@@ -32,7 +32,7 @@ export default function CreateOrSelect() {
           <Link
             to="/day-schedule/all"
             className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-            data-test="select-activity"
+            data-test="user-activities"
           >
             USER ACTIVITIES
           </Link>
