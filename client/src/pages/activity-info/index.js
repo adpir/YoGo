@@ -7,13 +7,28 @@ import api from "../../utils/api";
 function ActivityInfo() {
   const [activity, setActivity] = useState({});
   const { id } = useParams();
+  const url = window.location.href;
+
   useEffect(() => {
-    api
-      .getSystemActivityById(id)
-      .then((data) => {
-        setActivity(data);
-      })
-      .catch((err) => console.log(err));
+    const getActivities = () => {
+      // if on /activity-info/user/:id get user activities
+      if (url.indexOf("user") > -1) {
+        console.log("getUserActivityById", id);
+        api
+          .getUserActivityById(id)
+          .then((data) => setActivity(data))
+          .catch((err) => console.log("getUserActivityById error", err));
+      } else {
+        api
+          .getSystemActivityById(id)
+          .then((data) => {
+            setActivity(data);
+          })
+          .catch((err) => console.log("getSystemActivityById error", err));
+      }
+    };
+    console.log("activity", activity);
+    getActivities();
   }, []);
   return (
     <>
