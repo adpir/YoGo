@@ -7,6 +7,7 @@ import CircleButton from "../../components/CircleButton";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function DaySchedule() {
+  let temp = [];
   const [activities, setActivities] = useState([]);
   const { type } = useParams();
   useEffect(() => {
