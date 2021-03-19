@@ -40,7 +40,7 @@ function App() {
     axios.get("/api/user").then((res) => {
       console.log(res);
       if (res.data.user) {
-        console.log("there is a user in session");
+        console.log("there is a user in session", req.data);
 
         setUser({ loggedIn: true, email: res.data.user.email });
       } else {
@@ -60,17 +60,28 @@ function App() {
       />
       <Route exact path="/register" component={CreateAcct} />
       <Switch>
-        <Route path="/activity-info/:id" component={ActivityInfo} />
+        <Route path="/activity-info/system/:id" component={ActivityInfo} />
+        <Route path="/activity-info/user/:id" component={ActivityInfo} />
         <Route path="/create-account">
           <CreateAcct />
         </Route>
-        <Route path="/create-activity">
-          <CreateActivity />
-        </Route>
+        <Route
+          path="/create-activity"
+          render={() => <CreateActivity user={userState} />}
+        />
         <Route path="/create-or-select">
           <CreateOrSelect />
         </Route>
-        <Route path="/day-schedule/:type" component={DaySchedule} />
+        <Route
+          path="/day-schedule/:type"
+          user={userState}
+          render={() => <DaySchedule />}
+        />
+        <Route
+          path={["/user-schedule", "/user-schedule/:type"]}
+          user={userState}
+          render={() => <DaySchedule user={userState} />}
+        />
         <Route path="/select-activity">
           <SelectActivity />
         </Route>
