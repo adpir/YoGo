@@ -30,7 +30,7 @@ router.post(
 );
 
 router.get("/user", (req, res) => {
-  console.log(req);
+  // console.log(req); // this prints out a ton of info to console
   if (req.user) {
     console.log("user");
     res.json({ user: req.user });

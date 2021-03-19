@@ -6,19 +6,39 @@ import api from "../../utils/api";
 import CircleButton from "../../components/CircleButton";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
-function DaySchedule() {
-  let temp = [];
+function DaySchedule(props) {
   const [activities, setActivities] = useState([]);
   const { type } = useParams();
+  const url = window.location.href;
+  const onUserPage = url.indexOf("user-schedule") > -1;
   useEffect(() => {
-    api
-    .getSystemActivitiesByType(type)
-    .then((data) => {
-      setActivities(data);
-    })
-    .catch((err) => console.log(err));
+    // if on /user-activites page, get activites by this user
+    if (url.indexOf("user-schedule") > -1) {
+      console.log("user-activities user state", props.user);
+      api
+        .getUserIdByEmail(props.user.email)
+        .then((data) => {
+          const id = data[0]._id;
+          console.log("getUser id on user-activities", id);
+          api
+            .getUserActivities(id)
+            .then((data) => {
+              setActivities(data);
+            })
+            .catch((err) => console.log("getUserActivities error", err));
+        })
+        .catch((err) => console.log(err));
+    } else {
+      // if on /day-schedule/:type render activities by type
+      api
+        .getSystemActivitiesByType(type)
+        .then((data) => {
+          setActivities(data);
+        })
+        .catch((err) => console.log(err));
+    }
   }, []);
-  
+
   function handleOnDragEnd(result) {
     //handle errors caused by dragging off screen
     if (!result.destination) return;
@@ -32,7 +52,7 @@ function DaySchedule() {
 
     //update our activities state
     setActivities(items);
-  };
+  }
 
   return (
     <>
@@ -53,12 +73,21 @@ function DaySchedule() {
               >
                 {activities.map((activity, index) => {
                   let id = activity._id;
+                  console.log("activity", activity);
                   return (
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
-                        <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                        <li
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                        >
                           <Link
-                            to={"/activity-info/" + activity._id}
+                            to={
+                              onUserPage
+                                ? "/activity-info/user/" + activity._id
+                                : "/activity-info/system/" + activity._id
+                            }
                             key={activity._id}
                             data-test="day-schedule-activity"
                           >

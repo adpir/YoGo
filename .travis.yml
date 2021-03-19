@@ -20,13 +20,15 @@ cache:
     # we also need to cache folder with Cypress binary
     - ~/.cache
 install:
-  - npm ci
+  - npm install
 services:
   - mongodb
 scripts:
   # Run start in the background
-  - npm run start &
+  - npm run build
+  - npm run seed:users
   - npm run seed
+  - npm run start &
   - npm run test
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
