@@ -23,7 +23,7 @@ export default function CreateActivity(props) {
   useEffect(() => {
     if (props.user.email) {
       api.getUserIdByEmail(props.user.email).then((data) => {
-        console.log("getCurrentUser data", data);
+        console.log("getCurrentUser data", data, "email", props.user.email);
         setUser(data[0]);
         setUserId(data[0]._id);
         console.log("user id", userId);
@@ -68,6 +68,7 @@ export default function CreateActivity(props) {
               type="text"
               className="bg-white hover:bg-gray-100 text-gray-800 font-semibold w-screen mx-5 py-2 px-4 border border-gray-400 rounded shadow"
               placeholder="Activity Name"
+              data-test="activity-name-field"
               value={activityName}
               onChange={(e) => setActivityName(e.target.value)}
             />
@@ -78,6 +79,7 @@ export default function CreateActivity(props) {
             </label>
             <select
               className="flex-grow w-full mx-5"
+              data-test="category-dropdown"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
@@ -100,6 +102,7 @@ export default function CreateActivity(props) {
               type="text"
               pattern="\d*"
               maxLength="3"
+              data-test="duration-field"
               className="relative flex justify-center m-1 font-semibold py-.5 px-4 border border-gray-400 rounded shadow"
               placeholder="Duration (in minutes)"
               value={durationMinutes}
@@ -113,6 +116,7 @@ export default function CreateActivity(props) {
               rows="4"
               cols="30"
               placeholder="Description"
+              data-test="description-field"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
