@@ -3,16 +3,19 @@ const userActivityController = require("../../controllers/userActivityController
 
 // GET
 // Matches with "/api/activities/users/"
-router.route("/activities/users").get(userActivityController.findAll);
+router.route("/activities/user").get(userActivityController.findAll);
+
+router
+  .route("/activities/user-activity/:id")
+  .get(userActivityController.findById);
 
 // Matches with "/api/activities/users/:id"
-router.route("/activities/users/:id").get(userActivityController.findById);
+router.route("/activities/user/:id").get(userActivityController.findByUserId);
 
 // POST
 // Matches with "/api/activities/users/"
 // commenting out until we have authentication and can attach the user _id with the new activity
-
-// router.route("/activities/users").post(userActivityController.create);
+router.route("/activities/user").post(userActivityController.create);
 
 // PUT
 // Matches with "/api/activities/system/:id"
