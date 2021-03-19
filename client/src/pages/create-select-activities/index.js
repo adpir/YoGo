@@ -28,6 +28,15 @@ export default function CreateOrSelect() {
             SELECT
           </Link>
         </div>
+        <div className="relative flex items-center justify-center h-16">
+          <Link
+            to="/day-schedule/all"
+            className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+            data-test="user-activities"
+          >
+            USER ACTIVITIES
+          </Link>
+        </div>
       </div>
     </>
   );
