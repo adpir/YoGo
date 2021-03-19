@@ -34,7 +34,7 @@
     "seed": "node scripts/activitySeed.js",
     "seed:users": "node scripts/testUsersSeed.js",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build",
+    "build": "CI=false && cd client && npm run build",
     "heroku-postbuild": "npm run build",
     "test": "npm run lint && npm run cy",
     "lint": "eslint \"**/*.js\"",
