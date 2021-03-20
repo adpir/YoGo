@@ -38,7 +38,7 @@ export default function LoginPage(props) {
       .catch((err) => console.log(err));
   };
   if (redirect.redirectTo) {
-    return <Redirect to={redirect.redirectTo} />;
+    return <Redirect to={redirect.redirectTo} user={userState} />;
   } else {
     return (
       <>

@@ -1,9 +1,20 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/index";
 import { Link, useParams } from "react-router-dom";
 
-export default function CreateOrSelect(props) {
+function CreateOrSelect(props) {
   const { userId } = useParams();
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    console.log("CreateOrSelect props", props);
+    if (props.user.loggedIn) {
+      console.log("CreateOrSelect props.user.email", props.user.email);
+      setLoggedIn(true);
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -11,15 +22,20 @@ export default function CreateOrSelect(props) {
         <div className="relative flex items-center justify-center h-16">
           <h1 className="pacifico-title">Take Care Of Yourself</h1>
         </div>
-        <div className="relative flex items-center justify-center h-16">
-          <Link
-            to="/create-activity"
-            className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-            data-test="create-activity"
-          >
-            CREATE
-          </Link>
-        </div>
+        {loggedIn ? (
+          <div className="relative flex items-center justify-center h-16">
+            <Link
+              to="/create-activity"
+              className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+              data-test="create-activity"
+            >
+              CREATE
+            </Link>
+          </div>
+        ) : (
+          ""
+        )}
+
         <div className="relative flex items-center justify-center h-16">
           <Link
             to="/select-activity"
@@ -29,16 +45,26 @@ export default function CreateOrSelect(props) {
             SELECT
           </Link>
         </div>
-        <div className="relative flex items-center justify-center h-16">
-          <Link
-            to={"/user-schedule"}
-            className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-            data-test="user-activities"
-          >
-            USER ACTIVITIES
-          </Link>
-        </div>
+        {loggedIn ? (
+          <div className="relative flex items-center justify-center h-16">
+            <Link
+              to={"/user-schedule"}
+              className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+              data-test="user-activities"
+            >
+              USER ACTIVITIES
+            </Link>
+          </div>
+        ) : (
+          <small className="relative flex items-center justify-center h-16">
+            <Link className="text-blue" to="/">
+              Log in to create or view you're own activities.
+            </Link>
+          </small>
+        )}
       </div>
     </>
   );
 }
+
+export default CreateOrSelect;
