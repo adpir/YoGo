@@ -1,4 +1,4 @@
-// /* eslint-disable react/prop-types */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/index";
 import { Link, useParams } from "react-router-dom";
@@ -12,9 +12,10 @@ function DaySchedule(props) {
   const { type } = useParams();
   const url = window.location.href;
   const onUserPage = url.indexOf("user-schedule") > -1;
+
   useEffect(() => {
-    // if on /user-activites page, get activites by this user
-    if (url.indexOf("user-schedule") > -1) {
+    // if on /user-activities page, get activities by this user
+    if (onUserPage) {
       console.log("user-activities user state", props.user);
       api
         .getUserIdByEmail(props.user.email)

@@ -70,7 +70,7 @@ function App() {
           render={() => <CreateActivity user={userState} />}
         />
         <Route path="/create-or-select">
-          <CreateOrSelect />
+          <CreateOrSelect user={userState} />
         </Route>
         <Route
           path="/day-schedule/:type"
