@@ -4,7 +4,7 @@ import axios from "axios";
 import NavbarSignIn from "../../components/NavbarSignIn";
 
 export default function LoginPage(props) {
-  const [user, setUser] = useState({
+  const [userState, setUser] = useState({
     email: "",
     password: "",
   });
@@ -12,22 +12,24 @@ export default function LoginPage(props) {
   const [redirect, setRedirect] = useState({ redirectTo: null });
 
   const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setUser({ ...userState, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
+    console.log("login state", userState);
     e.preventDefault();
     axios
       .post("/api/users/login", {
-        email: user.email,
-        password: user.password,
+        email: userState.email,
+        password: userState.password,
       })
       .then((res) => {
         if (res.status === 200) {
           const parsedRes = JSON.parse(res.config.data);
+          console.log(parsedRes);
           props.updateUser({
             loggedIn: true,
-            username: parsedRes.username,
+            email: parsedRes.email,
           });
 
           setRedirect({ redirectTo: "/create-or-select" });
@@ -68,7 +70,7 @@ export default function LoginPage(props) {
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                   data-test="login-email"
-                  value={user.email}
+                  value={userState.email}
                   onChange={(e) => handleChange(e)}
                 />
               </div>
@@ -84,7 +86,7 @@ export default function LoginPage(props) {
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
                   data-test="login-password"
-                  value={user.password}
+                  value={userState.password}
                   onChange={(e) => handleChange(e)}
                 />
               </div>
@@ -158,7 +160,7 @@ export default function LoginPage(props) {
               className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
               data-test="skip-login"
             >
-              SKIP LOGIN FOR TESTING
+              SKIP LOGIN
             </Link>
           </div>
         </div>

@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 const passport = require("../../passport");
+const bcrypt = require("bcryptjs");
 
 // GET
 // Matches with "/api/users"
@@ -14,21 +15,28 @@ router.route("/users/:id").get(userController.findById);
 // Wait to implement until there is some security around who can do this
 router.route("/users").post(userController.create);
 
-router.route("users/login").post(
+router.post(
+  "/login",
   function (req, res, next) {
     next();
   },
   passport.authenticate("local"),
   (req, res) => {
-    res.send({ username: req.user.username });
+    var userInfo = {
+      email: req.user.email,
+    };
+    res.send(userInfo);
   }
 );
 
 router.get("/user", (req, res) => {
+  // console.log(req); // this prints out a ton of info to console
   if (req.user) {
+    console.log("user");
     res.json({ user: req.user });
   } else {
     res.json({ user: null });
+    console.log("no user");
   }
 });
 

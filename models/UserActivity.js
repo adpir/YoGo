@@ -29,9 +29,7 @@ const UserActivitySchema = new Schema({
     type: String,
     trim: true,
   },
-  createdBy: {
-    type: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  },
+  createdBy: { type: Schema.Types.ObjectId, ref: "User" },
   isPrivate: {
     type: Boolean,
     default: true,

@@ -1,19 +1,17 @@
-/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
 import React from "react";
 
-function RectangleBtn() {
-    return (
-        <div>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Button
-</button>
-            <button class="btn btn-blue">
-                Button
-</button>
-        </div>
-    )
-
+function RectangleBtn(props) {
+  return (
+    <>
+      <button
+        type={props.type}
+        className="flex-grow font-semibold w-full mx-5 py-2 px-4 border border-gray-400 rounded shadow"
+        disabled={props.disabled}
+      >
+        {props.buttonText}
+      </button>
+    </>
+  );
 }
-
-
 export default RectangleBtn;

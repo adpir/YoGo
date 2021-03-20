@@ -5,34 +5,27 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/yogodb");
 
 const testUsers = [
   {
-    userName: "Testy",
-    email: "tuser@testy.com",
-    password: "dsjafasdkfjasdf",
-  },
-  {
-    userName: "Tessadfty",
-    email: "tussdafer@testy.com",
-    password: "dsjafasdafsdkfjasdf",
-  },
-  {
-    userName: "Tessdfty",
-    email: "tusdsafer@testy.com",
-    password: "dsjaasfdfasdkfjasdf",
+    userName: "testyTester",
+    email: "testy@testy.com",
     firstName: "Testy",
     lastName: "User",
-    email: "tuser@testy.com",
+    password: "123123",
     isAdmin: false,
   },
   {
+    userName: "testyTester2",
     firstName: "Testy",
-    lastName: "McTester",
-    email: "ttesty@testy.com",
+    lastName: "McTester II",
+    email: "ttesty2@testy.com",
+    password: "123123",
     isAdmin: false,
   },
   {
+    userName: "testyAdmin",
     firstName: "Testy",
     lastName: "Admin",
     email: "tadmin@testy.com",
+    password: "123123",
     isAdmin: true,
   },
 ];
