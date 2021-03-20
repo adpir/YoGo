@@ -58,6 +58,15 @@ export default function HamburgerMenu() {
               Team
             </Link>
           </li>
+          <li className="nav-item">
+            <Link
+              to="/"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              data-test="hamburger-log-out"
+            >
+              log-out
+            </Link>
+          </li>
         </ul>
       </div>
     </>

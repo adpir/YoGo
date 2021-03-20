@@ -10,6 +10,13 @@ router.route("/users").get(userController.findAll);
 // Matches with "/api/users/:id"
 router.route("/users/:id").get(userController.findById);
 
+// logout
+router.route("/users/logout").post((req, res) => {
+  req.logout();
+  res.json({ message: "Logged out successfully" });
+  res.redirect("/");
+});
+
 // POST
 // Matches with "/api/users"
 // Wait to implement until there is some security around who can do this
