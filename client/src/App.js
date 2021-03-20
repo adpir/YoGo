@@ -10,6 +10,7 @@ import DaySchedule from "./pages/day-schedule/index";
 import LoginPage from "./pages/login-create-acct/index";
 import SelectActivity from "./pages/select-activity";
 import CreateAcct from "./pages/create-account";
+import Today from "./pages/today";
 import axios from "axios";
 
 function App() {
@@ -74,6 +75,11 @@ function App() {
         <Route path="/select-activity">
           <SelectActivity />
         </Route>
+        <Route path="/today" component={DaySchedule} />
+        {/* What I had before:
+        <Route path="/today">
+          <Today />
+        </Route> */}
       </Switch>
     </BrowserRouter>
   );

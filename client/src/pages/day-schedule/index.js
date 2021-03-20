@@ -5,9 +5,9 @@ import { Link, useParams } from "react-router-dom";
 import api from "../../utils/api";
 import CircleButton from "../../components/CircleButton";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import SaveTheDay from "../../components/SaveTheDay";
 
 function DaySchedule() {
-  let temp = [];
   const [activities, setActivities] = useState([]);
   const { type } = useParams();
   useEffect(() => {
@@ -18,6 +18,8 @@ function DaySchedule() {
     })
     .catch((err) => console.log(err));
   }, []);
+
+  let today = activities;
   
   function handleOnDragEnd(result) {
     //handle errors caused by dragging off screen
@@ -79,6 +81,7 @@ function DaySchedule() {
             )}
           </Droppable>
         </DragDropContext>
+        <SaveTheDay todaysActivities={today}/>
       </section>
     </>
   );
