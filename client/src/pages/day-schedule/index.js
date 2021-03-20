@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import api from "../../utils/api";
 import CircleButton from "../../components/CircleButton";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import Checkbox from "../../components/Checkbox";
 
 function DaySchedule(props) {
   const [activities, setActivities] = useState([]);
@@ -39,6 +40,15 @@ function DaySchedule(props) {
         .catch((err) => console.log(err));
     }
   }, []);
+
+  function checked(id) {
+    let element = document.getElementById(id);
+    if (element.classList.contains("line-through")) {
+      element.classList.remove("line-through");
+    } else {
+      element.classList.add("line-through");
+    }
+  }
 
   function handleOnDragEnd(result) {
     //handle errors caused by dragging off screen
@@ -76,32 +86,39 @@ function DaySchedule(props) {
                   let id = activity._id;
                   console.log("activity", activity);
                   return (
-                    <Draggable key={id} draggableId={id} index={index}>
-                      {(provided) => (
-                        <li
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                        >
-                          <Link
-                            to={
-                              onUserPage
-                                ? "/activity-info/user/" + activity._id
-                                : "/activity-info/system/" + activity._id
-                            }
-                            key={activity._id}
-                            data-test="day-schedule-activity"
+                    <div key={id}>
+                      <Draggable key={id} draggableId={id} index={index}>
+                        {(provided) => (
+                          <li
+                            key={id}
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
                           >
-                            <div className="relative flex items-center justify-center h-16">
-                              <CircleButton activityType={activity.type} />
-                              <p className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow">
-                                {activity.name}
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
-                      )}
-                    </Draggable>
+                            <Link
+                              to={
+                                onUserPage
+                                  ? "/activity-info/user/" + activity._id
+                                  : "/activity-info/system/" + activity._id
+                              }
+                              key={activity._id}
+                              data-test="day-schedule-activity"
+                            >
+                              <div className="relative flex items-center justify-center h-16">
+                                <CircleButton activityType={activity.type} />
+                                <p
+                                  className="relative flex justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow"
+                                  id={index}
+                                >
+                                  {activity.name}
+                                </p>
+                              </div>
+                            </Link>
+                            <Checkbox checked={() => checked(index)} />
+                          </li>
+                        )}
+                      </Draggable>
+                    </div>
                   );
                 })}
                 {provided.placeholder}
