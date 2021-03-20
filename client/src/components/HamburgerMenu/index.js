@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function HamburgerMenu() {
   const [hamburgerOpen, setHamburgerOpen] = React.useState(false);
@@ -21,40 +22,41 @@ export default function HamburgerMenu() {
       >
         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
           <li className="nav-item">
-            <a
-              href="/create-activity"
+            <Link
+              to="/create-activity"
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               data-test="hamburger-create-activity"
             >
               Create Activity
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              href="/day-schedule/all"
+            <Link
+              to="/day-schedule/all"
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               data-test="hamburger-todays-activities"
             >
               Todays Activities
-            </a>
+            </Link>
           </li>
+
           <li className="nav-item">
-            <a
-              href="/day-schedule/all"
+            <Link
+              to="/user-schedule"
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               data-test="hamburger-my-activity"
             >
               My Activities
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              href="#"
+            <Link
+              to="#"
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               data-test="hamburger-team"
             >
               Team
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
