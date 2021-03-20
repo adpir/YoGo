@@ -12,6 +12,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => (
+  res.render('index')
+))
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import NavbarSignIn from "../../components/NavbarSignIn";
+import GoogleLogin from "react-google-login";
 
 export default function LoginPage(props) {
   const [userState, setUser] = useState({
@@ -143,6 +144,9 @@ export default function LoginPage(props) {
                 </span>
                 Sign in
               </button>
+            </div>
+            <div className="relative flex items-center justify-center h-16">
+              <GoogleLogin />
             </div>
           </form>
           <div className="relative flex items-center justify-center h-16">

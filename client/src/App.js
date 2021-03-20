@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/index";
 import CircleButton from "./components/CircleButton";
 import RectangleBtn from "./components/RectangleBtn";
+import Login from "./components/LoginBtn";
+import Logout from "./components/LogoutBtn";
 import ActivityInfo from "../src/pages/activity-info/index";
 import CreateActivity from "../src/pages/create-activity/index";
 import CreateOrSelect from "./pages/create-select-activities";
