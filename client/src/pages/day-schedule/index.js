@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import api from "../../utils/api";
 import CircleButton from "../../components/CircleButton";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import Checkbox from "../../components/Checkbox";
 
 function DaySchedule(props) {
   const [activities, setActivities] = useState([]);
@@ -38,6 +39,10 @@ function DaySchedule(props) {
         .catch((err) => console.log(err));
     }
   }, []);
+
+  function checked () {
+    console.log("CHECKEDDDDDDDDDDDDDDDDDDDDDDD");
+}
 
   function handleOnDragEnd(result) {
     //handle errors caused by dragging off screen
@@ -74,14 +79,15 @@ function DaySchedule(props) {
                 {activities.map((activity, index) => {
                   let id = activity._id;
                   console.log("activity", activity);
-                  return (
+                  return (<div>
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
                         <li
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
                         >
+                        <Checkbox checked={checked} />
                           <Link
                             to={
                               onUserPage
@@ -93,7 +99,7 @@ function DaySchedule(props) {
                           >
                             <div className="relative flex items-center justify-center h-16">
                               <CircleButton activityType={activity.type} />
-                              <p className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow">
+                              <p className="relative flex bg-pink-600 justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow" id={index}>
                                 {activity.name}
                               </p>
                             </div>
@@ -101,6 +107,7 @@ function DaySchedule(props) {
                         </li>
                       )}
                     </Draggable>
+                    </div>
                   );
                 })}
                 {provided.placeholder}
