@@ -30,13 +30,35 @@ const testUsers = [
   },
 ];
 
-db.User.remove({})
-  .then(() => db.User.collection.insertMany(testUsers))
-  .then((data) => {
-    console.log(data.result.n + " test users inserted!");
-    process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
+let processCount = 0;
+testUsers.forEach((user) => {
+  db.User.collection.findOne({ email: user.email }, (err, result) => {
+    if (!result) {
+      db.User.collection
+        .insertOne(user)
+        .then((data) => {
+          processCount++;
+          console.log(user.email + " added successfully", processCount);
+          // exit the process if all done
+          if (processCount === testUsers.length) {
+            console.log("ALL DONE");
+            process.exit(0);
+          }
+        })
+        .catch((err) => {
+          processCount++;
+          console.log("Error occurred inserting test user", user.email);
+          process.exit(0);
+        });
+    } else {
+      processCount++;
+      console.log(user.email + " already exists", processCount);
+    }
+
+    // exit the process if all done
+    if (processCount === testUsers.length) {
+      console.log("ALL DONE");
+      process.exit(0);
+    }
   });
+});
