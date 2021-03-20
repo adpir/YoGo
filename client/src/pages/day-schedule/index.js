@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar/index";
 import { Link, useParams } from "react-router-dom";
 import api from "../../utils/api";
 import CircleButton from "../../components/CircleButton";
+import ActInfo from "../../components/ActInfo";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function DaySchedule(props) {
@@ -55,6 +56,8 @@ function DaySchedule(props) {
     setActivities(items);
   }
 
+  const [showModal, setShowModal] = React.useState(false);
+
   return (
     <>
       <Navbar />
@@ -83,7 +86,7 @@ function DaySchedule(props) {
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
                         >
-                          <Link
+                          {/* <Link
                             to={
                               onUserPage
                                 ? "/activity-info/user/" + activity._id
@@ -91,14 +94,22 @@ function DaySchedule(props) {
                             }
                             key={activity._id}
                             data-test="day-schedule-activity"
-                          >
-                            <div className="relative flex items-center justify-center h-16">
-                              <CircleButton activityType={activity.type} />
-                              <p className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow">
-                                {activity.name}
-                              </p>
-                            </div>
-                          </Link>
+                          > */}
+                          <div className="relative flex items-center justify-center h-16">
+                            <CircleButton activityType={activity.type} />
+                            <button
+                              className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow"
+                              onClick={() => setShowModal(true)}
+                            >
+                              <p>{activity.name}</p>
+                            </button>
+                            {showModal ? (
+                            
+                            <ActInfo />
+                            
+                            ) : null}
+                          </div>
+                          {/* </Link> */}
                         </li>
                       )}
                     </Draggable>
