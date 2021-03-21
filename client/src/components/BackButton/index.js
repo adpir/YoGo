@@ -7,13 +7,13 @@ export default function BackButton() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   return (
-    <div>
+    <div className="inline-flex">
       {!loggedIn && (
         <button
           className="quicksand-body text-gray-600 hover:text-gray-400 hover:underline font-bold"
           onClick={() => history.goBack()}
         >
-          &#8249; Go Back
+          <i className="fas fa-chevron-left"></i>
         </button>
       )}
     </div>

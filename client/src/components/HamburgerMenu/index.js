@@ -15,7 +15,7 @@ export default function HamburgerMenu() {
       </button>
       <div
         className={
-          "lg:flex flex-grow items-center" +
+          "lg:flex flex-grow text-center" +
           (hamburgerOpen ? " flex" : " hidden")
         }
         id="example-navbar-danger"
@@ -24,7 +24,7 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="/create-activity"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-small"
               data-test="hamburger-create-activity"
             >
               Create Activity
@@ -33,17 +33,17 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="/day-schedule/all"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-small"
               data-test="hamburger-todays-activities"
             >
-              Todays Activities
+              Today's Activities
             </Link>
           </li>
 
           <li className="nav-item">
             <Link
               to="/user-schedule"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-small"
               data-test="hamburger-my-activity"
             >
               My Activities
@@ -52,7 +52,7 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="#"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-small"
               data-test="hamburger-team"
             >
               Team
