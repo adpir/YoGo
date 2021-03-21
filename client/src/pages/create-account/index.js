@@ -19,7 +19,7 @@ export default function CreateAcct() {
     e.preventDefault();
     api
       .postUser(user)
-      .then((res) => {})
+      .then((res) => { })
       .then(() => (window.location = "/"))
       .catch((err) => console.log("api postUser err", err));
   };
@@ -28,16 +28,13 @@ export default function CreateAcct() {
     <>
       <Navbar />
       <div className="quicksand-body w-full">
-      <div className="md:col-span-1">
-            <div className="px-4 sm:px-0">
-              <h3 className="text-lg font-medium leading-6 text-gray-900 text-center">
-                Create a free account
-              </h3>
-              <p className="mt-1 text-sm text-gray-600"></p>
-            </div>
+        <div className="md:col-span-1">
+          <div className="relative flex items-center justify-center h-16">
+            <h1 className="pacifico-title text-3xl">Create an Account</h1>
           </div>
+        </div>
         <div className="md:grid md:grid-cols-1 md:gap-6">
-          
+
           <div className="mt-5 md:mt-0 md:col-span-2">
             <form>
               <div className="shadow overflow-hidden sm:rounded-md">

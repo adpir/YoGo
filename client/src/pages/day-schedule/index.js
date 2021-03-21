@@ -103,9 +103,7 @@ function DaySchedule(props) {
       <Navbar />
       <section className="w-full quicksand-body">
         <div className="relative flex items-center justify-center h-16">
-          <div className="bg-white text-center w-screen mx-16 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-            TODAY IS THE DAY!
-          </div>
+          <h1 className="pacifico-title text-3xl">Today is the Day</h1>
         </div>
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="activity">
@@ -138,7 +136,7 @@ function DaySchedule(props) {
                                 activityType={activity.type}
                               />
                               <p
-                                className="relative flex justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow"
+                                className="relative flex justify-center w-1/2 m-1 w-25 py-.5 px-4 border border-gray-400 rounded shadow"
                                 data-id={id}
                                 id={id}
                                 onClick={handleOpenModal}

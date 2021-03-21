@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 .pacifico-title {
-    font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 
 .quicksand-body {
-    font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
 }
