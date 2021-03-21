@@ -6,9 +6,15 @@ import api from "../../utils/api";
 import CircleButton from "../../components/CircleButton";
 import ActInfo from "../../components/ActInfo";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import Checkbox from "../../components/Checkbox";
+import ActivityInfo from "../activity-info";
+import ActivityInfoModal from "../../components/ActivityInfoModal";
 
 function DaySchedule(props) {
   const [activities, setActivities] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [isUserActivity, setIsUserActivity] = useState(false);
+  const [clickedActivityId, setClickedActivityId] = useState("");
   const { type } = useParams();
   const url = window.location.href;
   const onUserPage = url.indexOf("user-schedule") > -1;
@@ -41,6 +47,16 @@ function DaySchedule(props) {
     }
   }, []);
 
+  function checked(id) {
+    console.log("checked id", id);
+    let element = document.getElementById(id);
+    if (element.classList.contains("line-through")) {
+      element.classList.remove("line-through");
+    } else {
+      element.classList.add("line-through");
+    }
+  }
+
   function handleOnDragEnd(result) {
     //handle errors caused by dragging off screen
     if (!result.destination) return;
@@ -56,10 +72,42 @@ function DaySchedule(props) {
     setActivities(items);
   }
 
-  const [showModal, setShowModal] = React.useState(false);
+  function handleOpenModal(event) {
+    // console.log("handleOpenModal event", event);
+    setShowModal(true);
+    event.preventDefault();
+    event.stopPropagation();
+    console.log("handleOpenModal event.target", event.target);
+    const activityId = event.target.dataset.id;
+    setClickedActivityId(activityId);
+
+    console.log("showModal", showModal);
+  }
+
+  function handleModalClose(event) {
+    console.log("handleModalClose");
+    event.stopPropagation();
+    // handler function to update props.show when buttons are clicked in modal
+    setShowModal(!showModal);
+  }
+
+  function handleCompleteActivity(event) {
+    event.stopPropagation();
+    const id = clickedActivityId;
+    console.log("handleCompleteActivity id", id, typeof id);
+    checked(id);
+    setShowModal(!showModal);
+  }
 
   return (
     <>
+      <ActivityInfoModal
+        handleModalClose={handleModalClose}
+        handleCompleteActivity={handleCompleteActivity}
+        show={showModal}
+        id={clickedActivityId}
+        isUserActivity={onUserPage}
+      />
       <Navbar />
       <section className="w-full max-w-sm quicksand-body">
         <div className="relative flex items-center justify-center h-16">
@@ -77,39 +125,37 @@ function DaySchedule(props) {
               >
                 {activities.map((activity, index) => {
                   let id = activity._id;
-                  console.log("activity", activity);
                   return (
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
                         <li
+                          key={id}
                           ref={provided.innerRef}
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
                         >
-                          {/* <Link
-                            to={
-                              onUserPage
-                                ? "/activity-info/user/" + activity._id
-                                : "/activity-info/system/" + activity._id
-                            }
+                          <div
+                            onClick={handleOpenModal}
+                            data-id={id}
                             key={activity._id}
                             data-test="day-schedule-activity"
-                          > */}
-                          <div className="relative flex items-center justify-center h-16">
-                            <CircleButton activityType={activity.type} />
-                            <button
-                              className="relative flex  justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow"
-                              onClick={() => setShowModal(true)}
-                            >
-                              <p>{activity.name}</p>
-                            </button>
-                            {showModal ? (
-                            
-                            <ActInfo />
-                            
-                            ) : null}
+                          >
+                            <div className="relative flex items-center justify-center h-16">
+                              <CircleButton
+                                id={id}
+                                activityType={activity.type}
+                              />
+                              <p
+                                className="relative flex justify-center w-1/2 m-1 font-semibold w-25 py-.5 px-4 border border-gray-400 rounded shadow"
+                                data-id={id}
+                                id={id}
+                                onClick={handleOpenModal}
+                              >
+                                {activity.name}
+                              </p>
+                            </div>
                           </div>
-                          {/* </Link> */}
+                          <Checkbox checked={() => checked(id)} />
                         </li>
                       )}
                     </Draggable>
