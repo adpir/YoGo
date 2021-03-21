@@ -62,7 +62,7 @@ describe("Smoke Tests", () => {
       cy.get("button[data-test=sign-in-button]").click();
       cy.get("[data-test=select-activity]").click();
       cy.get(`[data-test=select-${activity}-activities]`).click();
-      cy.contains("TODAY IS THE DAY!").should("be.visible");
+      cy.contains("Today is the Day").should("be.visible");
       cy.url().should("include", `day-schedule/${activity}`);
     });
   });
