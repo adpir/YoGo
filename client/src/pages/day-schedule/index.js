@@ -1,19 +1,16 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/index";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import api from "../../utils/api";
 import CircleButton from "../../components/CircleButton";
-import ActInfo from "../../components/ActInfo";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Checkbox from "../../components/Checkbox";
-import ActivityInfo from "../activity-info";
 import ActivityInfoModal from "../../components/ActivityInfoModal";
 
 function DaySchedule(props) {
   const [activities, setActivities] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [isUserActivity, setIsUserActivity] = useState(false);
   const [clickedActivityId, setClickedActivityId] = useState("");
   const { type } = useParams();
   const url = window.location.href;
@@ -22,7 +19,6 @@ function DaySchedule(props) {
   useEffect(() => {
     // if on /user-activities page, get activities by this user
     if (onUserPage) {
-      console.log("user-activities user state", props.user);
       api
         .getUserIdByEmail(props.user.email)
         .then((data) => {
@@ -48,7 +44,6 @@ function DaySchedule(props) {
   }, []);
 
   function checked(id) {
-    console.log("checked id", id);
     let element = document.getElementById(id);
     if (element.classList.contains("line-through")) {
       element.classList.remove("line-through");
@@ -73,11 +68,9 @@ function DaySchedule(props) {
   }
 
   function handleOpenModal(event) {
-    // console.log("handleOpenModal event", event);
     setShowModal(true);
     event.preventDefault();
     event.stopPropagation();
-    console.log("handleOpenModal event.target", event.target);
     const activityId = event.target.dataset.id;
     setClickedActivityId(activityId);
 
@@ -94,7 +87,6 @@ function DaySchedule(props) {
   function handleCompleteActivity(event) {
     event.stopPropagation();
     const id = clickedActivityId;
-    console.log("handleCompleteActivity id", id, typeof id);
     checked(id);
     setShowModal(!showModal);
   }
