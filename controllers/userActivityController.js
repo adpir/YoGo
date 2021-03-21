@@ -27,7 +27,6 @@ module.exports = {
     };
     db.UserActivity.create(newActivity)
       .then((dbModel) => {
-        console.log("dbModel", dbModel);
         res.json(dbModel);
       })
       .catch((err) => res.status(422).json(err));
