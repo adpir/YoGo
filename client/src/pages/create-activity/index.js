@@ -62,7 +62,7 @@ export default function CreateActivity(props) {
     <>
       <Navbar />
       <form onSubmit={handleFormSubmit}>
-        <div className="quicksand-body w-full max-w-sm">
+        <div className="quicksand-body w-full">
           <div className="relative flex items-center justify-center h-16">
             <input
               type="text"
