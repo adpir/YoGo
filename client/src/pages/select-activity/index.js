@@ -6,7 +6,7 @@ export default function SelectActivity() {
   return (
     <>
       <Navbar />
-      <div className="w-full max-w-sm quicksand-body">
+      <div className="w-full quicksand-body">
         <div className="relative flex items-center justify-center h-16">
           <h1 className="pacifico-title">Which Type Of Activities Today?</h1>
         </div>

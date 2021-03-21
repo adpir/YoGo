@@ -43,7 +43,7 @@ export default function LoginPage(props) {
     return (
       <>
         <NavbarSignIn />
-        <div className="w-full max-w-sm quicksand-body">
+        <div className="w-full quicksand-body">
           <div className="relative flex items-center justify-center h-16">
             <h1 className="pacifico-title">Take Care Of Yourself...</h1>
           </div>
