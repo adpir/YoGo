@@ -58,7 +58,7 @@ function CreateOrSelect(props) {
         ) : (
           <small className="relative flex items-center justify-center h-16">
             <Link className="text-blue" to="/">
-              Log in to create or view you're own activities.
+              Log in to create or view your own activities.
             </Link>
           </small>
         )}
