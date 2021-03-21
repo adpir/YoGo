@@ -4,7 +4,6 @@ import api from "../../utils/api";
 function ActivityInfoModal(props) {
   const [activity, setActivity] = useState({});
   const [show, setShow] = useState(false);
-  const divClass = "fixed z-50 inset-0 overflow-y-auto";
 
   useEffect(() => {
     const getActivities = () => {
@@ -32,7 +31,7 @@ function ActivityInfoModal(props) {
   } else {
     return (
       <>
-        <div id="modalDiv" className={divClass}>
+        <div id="modalDiv" className="fixed z-50 inset-0 overflow-y-auto">
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div
               className="fixed inset-0 transition-opacity"
