@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar/index";
-import CircleButton from "./components/CircleButton";
-import RectangleBtn from "./components/RectangleBtn";
-import ActivityInfo from "../src/pages/activity-info/index";
 import CreateActivity from "../src/pages/create-activity/index";
 import CreateOrSelect from "./pages/create-select-activities";
 import DaySchedule from "./pages/day-schedule/index";
@@ -60,8 +56,6 @@ function App() {
       />
       <Route exact path="/register" component={CreateAcct} />
       <Switch>
-        <Route path="/activity-info/system/:id" component={ActivityInfo} />
-        <Route path="/activity-info/user/:id" component={ActivityInfo} />
         <Route path="/create-account">
           <CreateAcct />
         </Route>

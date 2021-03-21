@@ -1,9 +1,6 @@
 import React from "react";
 
 export default function Checkbox(props) {
-  // function checked () {
-  //     console.log("CHECKEDDDDDDDDDDDDDDDDDDDDDDD");
-  // }
   return (
     <>
       <button
