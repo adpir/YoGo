@@ -45,7 +45,7 @@ export default function LoginPage(props) {
         <NavbarSignIn />
         <div className="w-full quicksand-body">
           <div className="relative flex items-center justify-center h-16">
-            <h1 className="pacifico-title">Take Care Of Yourself...</h1>
+            <h1 className="pacifico-title text-3xl">Take Care Of Yourself...</h1>
           </div>
           <div className="relative flex items-center justify-center h-16">
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -148,7 +148,7 @@ export default function LoginPage(props) {
           <div className="relative flex items-center justify-center h-16">
             <Link
               to="/create-account"
-              className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+              className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow"
               data-test="create-account"
             >
               CREATE ACCOUNT
@@ -157,7 +157,7 @@ export default function LoginPage(props) {
           <div className="relative flex items-center justify-center h-16">
             <Link
               to="/create-or-select"
-              className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+              className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow"
               data-test="skip-login"
             >
               SKIP LOGIN
