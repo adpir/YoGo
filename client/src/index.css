@@ -11,7 +11,15 @@
   font-weight: 300;
 }
 
-.bkrd-1, .bkrd-2, .bkrd-3, .bkrd-4, .bkrd-5, .bkrd-6, .bkrd-7, .bkrd-8, .bkrd-9 {
+.bkrd-1,
+.bkrd-2,
+.bkrd-3,
+.bkrd-4,
+.bkrd-5,
+.bkrd-6,
+.bkrd-7,
+.bkrd-8,
+.bkrd-9 {
   background-size: cover;
 }
 

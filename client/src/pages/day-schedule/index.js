@@ -119,7 +119,7 @@ function DaySchedule(props) {
                   return (
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
-                        <li className="items-center grid grid-cols-2 gap-1"
+                        <li className="items-center grid grid-flow-col text-center"
                           key={id}
                           ref={provided.innerRef}
                           {...provided.draggableProps}
@@ -131,13 +131,13 @@ function DaySchedule(props) {
                             key={activity._id}
                             data-test="day-schedule-activity"
                           >
-                            <div className="relative flex items-center h-16">
+                            <div className="relative flex items-center h-16 text-center">
                               <CircleButton
                                 id={id}
                                 activityType={activity.type}
                               />
                               <button
-                                className="bg-white flex-grow w-full mx-5 py-2 px-4 border border-gray-400 rounded shadow"
+                                className="bg-white flex-grow w-full p-2 border border-gray-400 rounded shadow text-center"
                                 data-id={id}
                                 id={id}
                                 onClick={handleOpenModal}
@@ -146,7 +146,7 @@ function DaySchedule(props) {
                               </button>
                             </div>
                           </div>
-                          <div className="items-center"><Checkbox checked={() => checked(id)} /></div>
+                          <div className="text-center w-3/4"><Checkbox checked={() => checked(id)} /></div>
                         </li>
                       )}
                     </Draggable>

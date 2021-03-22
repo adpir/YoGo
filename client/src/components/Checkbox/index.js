@@ -4,7 +4,7 @@ export default function Checkbox(props) {
   return (
     <>
       <button
-        className="bg-white justify-center m-1 border border-gray-400 rounded shadow w-8 max-h-full"
+        className="bg-white border border-gray-400 rounded shadow max-h-full p-2 text-center"
         // eslint-disable-next-line react/prop-types
         onClick={props.checked}
       >
