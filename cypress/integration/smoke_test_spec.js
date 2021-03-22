@@ -76,9 +76,11 @@ describe("Smoke Tests", () => {
     cy.get("[data-test=day-schedule-activity]").first().click();
     cy.get("[data-test=activity-info-name]")
       .should("be.visible")
-      // just check existence of description since some 
+      // just check existence of description and duration since some
       // activities don't have descriptions
       .get("[data-test=activity-info-description]")
+      .should("exist")
+      .get("[data-test=activity-info-duration]")
       .should("exist")
       .get("[data-test=complete-activity]")
       .should("be.visible")
