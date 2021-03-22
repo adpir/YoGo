@@ -6,7 +6,7 @@ function RectangleBtn(props) {
     <>
       <button
         type={props.type}
-        className="flex-grow w-full mx-5 py-2 px-4 border border-gray-400 rounded shadow"
+        className="flex-grow w-full mx-5 py-2 px-4 bg-white border border-gray-400 rounded shadow"
         disabled={props.disabled}
       >
         {props.buttonText}

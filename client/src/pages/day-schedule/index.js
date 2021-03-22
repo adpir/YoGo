@@ -17,7 +17,7 @@ function DaySchedule(props) {
   const onUserPage = url.indexOf("user-schedule") > -1;
 
   useEffect(() => {
-    // if on /user-activities page, get activities by this user
+    // if on user-activities page, get activities by this user
     if (onUserPage) {
       api
         .getUserIdByEmail(props.user.email)
@@ -93,71 +93,71 @@ function DaySchedule(props) {
 
   return (
     <>
-      <div className="h-screen bkrd-9">
-        <ActivityInfoModal
-          handleModalClose={handleModalClose}
-          handleCompleteActivity={handleCompleteActivity}
-          show={showModal}
-          id={clickedActivityId}
-          isUserActivity={onUserPage}
-        />
-        <Navbar />
-        <section className="w-full quicksand-body">
-          <div className="relative flex items-center justify-center h-16">
-            <h1 className="pacifico-title text-3xl text-green-900">Today is the Day</h1>
-          </div>
-          <DragDropContext onDragEnd={handleOnDragEnd}>
-            <Droppable droppableId="activity">
-              {(provided) => (
-                <ul
-                  className="activity"
-                  {...provided.droppableProps}
-                  ref={provided.innerRef}
-                >
-                  {activities.map((activity, index) => {
-                    let id = activity._id;
-                    return (
-                      <Draggable key={id} draggableId={id} index={index}>
-                        {(provided) => (
-                          <li
-                            key={id}
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
+    <div className="h-screen bkrd-9">
+      <ActivityInfoModal
+        handleModalClose={handleModalClose}
+        handleCompleteActivity={handleCompleteActivity}
+        show={showModal}
+        id={clickedActivityId}
+        isUserActivity={onUserPage}
+      />
+      <Navbar />
+      <section className="w-full quicksand-body">
+        <div className="relative flex items-center justify-center h-16">
+          <h1 className="pacifico-title text-3xl text-green-900">Today is the Day</h1>
+        </div>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="activity">
+            {(provided) => (
+              <ul
+                className="activity"
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                {activities.map((activity, index) => {
+                  let id = activity._id;
+                  return (
+                    <Draggable key={id} draggableId={id} index={index}>
+                      {(provided) => (
+                        <li className="items-center grid grid-flow-col text-center"
+                          key={id}
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                        >
+                          <div
+                            onClick={handleOpenModal}
+                            data-id={id}
+                            key={activity._id}
+                            data-test="day-schedule-activity"
                           >
-                            <div
-                              onClick={handleOpenModal}
-                              data-id={id}
-                              key={activity._id}
-                              data-test="day-schedule-activity"
-                            >
-                              <div className="relative flex items-center justify-center h-16">
-                                <CircleButton
-                                  id={id}
-                                  activityType={activity.type}
-                                />
-                                <p
-                                  className="relative flex justify-center w-1/2 m-1 w-25 py-.5 px-4 border border-gray-400 rounded shadow"
-                                  data-id={id}
-                                  id={id}
-                                  onClick={handleOpenModal}
-                                >
-                                  {activity.name}
-                                </p>
-                              </div>
+                            <div className="relative flex items-center h-16 text-center">
+                              <CircleButton
+                                id={id}
+                                activityType={activity.type}
+                              />
+                              <button
+                                className="bg-white flex-grow w-full p-2 border border-gray-400 rounded shadow text-center"
+                                data-id={id}
+                                id={id}
+                                onClick={handleOpenModal}
+                              >
+                                {activity.name}
+                              </button>
                             </div>
-                            <Checkbox checked={() => checked(id)} />
-                          </li>
-                        )}
-                      </Draggable>
-                    );
-                  })}
-                  {provided.placeholder}
-                </ul>
-              )}
-            </Droppable>
-          </DragDropContext>
-        </section>
+                          </div>
+                          <div className="text-center w-3/4"><Checkbox checked={() => checked(id)} /></div>
+                        </li>
+                      )}
+                    </Draggable>
+                  );
+                })}
+                {provided.placeholder}
+              </ul>
+            )}
+          </Droppable>
+        </DragDropContext>
+      </section>
       </div>
     </>
   );
