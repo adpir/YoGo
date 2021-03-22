@@ -8,7 +8,7 @@ export default function SelectActivity() {
     <div className="h-screen bkrd-8">
       <Navbar />
       <div className="w-full quicksand-body">
-        <div className="relative flex items-center text-center justify-center h-16">
+        <div className="relative flex items-center justify-center h-16">
           <h1 className="pacifico-title text-3xl">Which Type Of Activities Today?</h1>
         </div>
         <Link
