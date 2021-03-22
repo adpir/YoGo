@@ -17,6 +17,7 @@ function CreateOrSelect(props) {
 
   return (
     <>
+    <div className="h-screen bkrd-7">
       <Navbar />
       <div className="w-full quicksand-body">
         <div className="relative flex items-center justify-center h-16">
@@ -62,6 +63,7 @@ function CreateOrSelect(props) {
             </Link>
             </small>
           )}
+      </div>
       </div>
     </>
   );

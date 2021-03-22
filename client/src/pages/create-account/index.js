@@ -26,6 +26,7 @@ export default function CreateAcct() {
 
   return (
     <>
+    <div className="h-screen bkrd-2">
       <Navbar />
       <div className="quicksand-body w-full">
         <div className="md:col-span-1">
@@ -146,6 +147,7 @@ export default function CreateAcct() {
             </form>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
