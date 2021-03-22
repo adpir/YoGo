@@ -7,7 +7,7 @@ export default function HamburgerMenu() {
   return (
     <>
       <button
-        className="flex items-center justify-end p-2 rounded-md text-gray-500 text-2xl"
+        className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 text-2xl"
         type="button"
         onClick={() => setHamburgerOpen(!hamburgerOpen)}
       >
@@ -23,37 +23,27 @@ export default function HamburgerMenu() {
         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
           <li className="nav-item">
             <Link
-              to="/create-activity"
+              to="/create-account"
               className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-create-activity"
             >
-              Create Activity
+              Create Account
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="/day-schedule/all"
+              to="/"
               className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-todays-activities"
             >
-              Today's Activities
+              Sign In
             </Link>
           </li>
-
           <li className="nav-item">
             <Link
-              to="/user-schedule"
+              to="/"
               className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-my-activity"
-            >
-              My Activities
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="#"
-              className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
-              data-test="hamburger-team"
             >
               Team
             </Link>
