@@ -10,3 +10,43 @@
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
 }
+
+.bkrd-1, .bkrd-2, .bkrd-3, .bkrd-4, .bkrd-5, .bkrd-6, .bkrd-7, .bkrd-8, .bkrd-9 {
+  background-size: cover;
+}
+
+.bkrd-1 {
+  background-image: url(./images/300ppi/Asset\ 1.png);
+}
+
+.bkrd-2 {
+  background-image: url(./images/300ppi/Asset\ 2.png);
+}
+
+.bkrd-3 {
+  background-image: url(./images/300ppi/Asset\ 3.png);
+}
+
+.bkrd-4 {
+  background-image: url(./images/300ppi/Asset\ 4.png);
+}
+
+.bkrd-5 {
+  background-image: url(./images/300ppi/Asset\ 5.png);
+}
+
+.bkrd-6 {
+  background-image: url(./images/300ppi/Asset\ 6.png);
+}
+
+.bkrd-7 {
+  background-image: url(./images/300ppi/Asset\ 7.png);
+}
+
+.bkrd-8 {
+  background-image: url(./images/300ppi/Asset\ 8.png);
+}
+
+.bkrd-9 {
+  background-image: url(./images/300ppi/Asset\ 9.png);
+}

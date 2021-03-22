@@ -93,6 +93,7 @@ function DaySchedule(props) {
 
   return (
     <>
+    <div className="h-screen bkrd-9">
       <ActivityInfoModal
         handleModalClose={handleModalClose}
         handleCompleteActivity={handleCompleteActivity}
@@ -157,6 +158,7 @@ function DaySchedule(props) {
           </Droppable>
         </DragDropContext>
       </section>
+      </div>
     </>
   );
 }

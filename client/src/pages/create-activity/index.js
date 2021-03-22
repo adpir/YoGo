@@ -60,6 +60,7 @@ export default function CreateActivity(props) {
 
   return (
     <>
+    <div className="h-screen bkrd-5">
       <Navbar />
       <form onSubmit={handleFormSubmit}>
         <div className="quicksand-body w-full">
@@ -134,6 +135,7 @@ export default function CreateActivity(props) {
           </div>
         </div>
       </form>
+      </div>
     </>
   );
 }

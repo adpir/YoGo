@@ -42,6 +42,7 @@ export default function LoginPage(props) {
   } else {
     return (
       <>
+      <div className="h-screen bkrd-1">
         <NavbarSignIn />
         <div className="w-full quicksand-body">
           <div className="relative flex items-center justify-center h-16">
@@ -163,6 +164,7 @@ export default function LoginPage(props) {
               SKIP LOGIN
             </Link>
           </div>
+        </div>
         </div>
       </>
     );

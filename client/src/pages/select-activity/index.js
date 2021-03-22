@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 export default function SelectActivity() {
   return (
     <>
+    <div className="h-screen bkrd-8">
       <Navbar />
       <div className="w-full quicksand-body">
         <div className="relative flex items-center justify-center h-16">
@@ -54,6 +55,7 @@ export default function SelectActivity() {
             ALL
           </button>
         </Link>
+      </div>
       </div>
     </>
   );
