@@ -17,7 +17,7 @@ function DaySchedule(props) {
   const onUserPage = url.indexOf("user-schedule") > -1;
 
   useEffect(() => {
-    // if on /user-activities page, get activities by this user
+    // if on user-activities page, get activities by this user
     if (onUserPage) {
       api
         .getUserIdByEmail(props.user.email)
@@ -136,14 +136,16 @@ function DaySchedule(props) {
                                 activityType={activity.type}
                               />
                               <p
-                                className="relative flex justify-center w-1/2 m-1 w-25 py-.5 px-4 border border-gray-400 rounded shadow"
+                                className="relative flex justify-center w-1/2 m-1 w-25 py-.5 px-4 border border-gray-400 rounded shadow p-1"
                                 data-id={id}
                                 id={id}
                                 onClick={handleOpenModal}
                               >
                                 {activity.name}
                               </p>
+                              <Checkbox checked={() => checked(id)} />
                             </div>
+                            {/* <Checkbox checked={() => checked(id)} /> */}
                           </div>
                           <Checkbox checked={() => checked(id)} />
                         </li>

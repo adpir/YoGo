@@ -5,9 +5,10 @@ export default function Checkbox(props) {
     <>
       <button
         className="justify-center m-1 border border-gray-400 rounded shadow"
+        // eslint-disable-next-line react/prop-types
         onClick={props.checked}
       >
-        check
+        <i className="fas fa-check p-2"></i>
       </button>
     </>
   );
