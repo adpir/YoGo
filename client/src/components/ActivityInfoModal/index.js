@@ -70,6 +70,16 @@ function ActivityInfoModal(props) {
                       {activity.description}
                     </p>
                   </div>
+                  <div className="mt-2">
+                    <p
+                      className="text-sm text-gray-500"
+                      data-test="activity-info-duration"
+                    >
+                      {activity.durationMinutes
+                        ? "Duration: " + activity.durationMinutes + " minutes"
+                        : ""}
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
