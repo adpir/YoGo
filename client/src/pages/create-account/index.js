@@ -31,7 +31,7 @@ export default function CreateAcct() {
         <div className="quicksand-body w-full">
           <div className="md:col-span-1">
             <div className="relative flex items-center justify-center h-16">
-              <h1 className="pacifico-title text-3xl">Create an Account</h1>
+              <h1 className="pacifico-title text-3xl text-green-900">Create an Account</h1>
             </div>
           </div>
           <div className="md:grid md:grid-cols-1 md:gap-6">

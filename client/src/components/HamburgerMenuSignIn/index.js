@@ -24,7 +24,7 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="/create-account"
-              className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
+              className="quicksand-body text-gray-600 hover:bg-green-900 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-create-activity"
             >
               Create Account
@@ -33,7 +33,7 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="/"
-              className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
+              className="quicksand-body text-gray-600 hover:bg-green-900 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-todays-activities"
             >
               Sign In
@@ -42,7 +42,7 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="/"
-              className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
+              className="quicksand-body text-gray-600 hover:bg-green-900 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-my-activity"
             >
               Team
