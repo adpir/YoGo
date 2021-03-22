@@ -21,13 +21,13 @@ function CreateOrSelect(props) {
         <Navbar />
         <div className="w-full quicksand-body">
           <div className="relative flex items-center justify-center h-16">
-            <h1 className="pacifico-title text-3xl">Take Care Of Yourself</h1>
+            <h1 className="pacifico-title text-3xl text-green-900">Take Care Of Yourself</h1>
           </div>
           {loggedIn ? (
             <div className="relative flex items-center justify-center h-16">
               <Link
                 to="/create-activity"
-                className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow"
+                className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow"
                 data-test="create-activity"
               >
                 CREATE
