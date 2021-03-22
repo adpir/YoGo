@@ -24,7 +24,7 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="/create-activity"
-              className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
+              className="quicksand-body text-gray-600 hover:bg-green-900 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-create-activity"
             >
               Create Activity
@@ -33,7 +33,7 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="/day-schedule/all"
-              className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
+              className="quicksand-body text-gray-600 hover:bg-green-900 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-todays-activities"
             >
               Today's Activities
@@ -43,7 +43,7 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="/user-schedule"
-              className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
+              className="quicksand-body text-gray-600 hover:bg-green-900 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-my-activity"
             >
               My Activities
@@ -52,7 +52,7 @@ export default function HamburgerMenu() {
           <li className="nav-item">
             <Link
               to="#"
-              className="quicksand-body text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm"
+              className="quicksand-body text-gray-600 hover:bg-green-900 hover:text-white px-3 py-2 rounded-md text-sm"
               data-test="hamburger-team"
             >
               Team

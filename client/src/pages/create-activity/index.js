@@ -64,10 +64,10 @@ export default function CreateActivity(props) {
       <Navbar />
       <form onSubmit={handleFormSubmit}>
         <div className="quicksand-body w-full">
-          <div className="relative flex items-center justify-center h-16">
+          <div className="relative flex items-center justify-center w-3/4 h-16">
             <input
               type="text"
-              className="bg-white hover:bg-gray-100 text-gray-800 w-screen mx-5 py-2 px-4 border border-gray-400 rounded shadow"
+              className="bg-white hover:bg-gray-100 text-gray-800  w-screen mx-5 py-2 px-4 border border-gray-400 rounded shadow"
               placeholder="Activity Name"
               data-test="activity-name-field"
               value={activityName}
@@ -75,7 +75,7 @@ export default function CreateActivity(props) {
             />
           </div>
           <div className="relative flex items-center justify-center h-16">
-            <label className="flex-grow w-full mx-5 py-.5 px-4">
+            <label className="flex-grow w-full mx-5  py-.5 px-4">
               Select Category
             </label>
             <select
@@ -104,7 +104,7 @@ export default function CreateActivity(props) {
               pattern="\d*"
               maxLength="3"
               data-test="duration-field"
-              className="relative flex justify-center m-1 py-.5 px-4 border border-gray-400 rounded shadow"
+              className="relative flex justify-center m-1  py-.5 px-4 border border-gray-400 rounded shadow"
               placeholder="Duration (in minutes)"
               value={durationMinutes}
               onChange={(e) => setDurationMinutes(e.target.value)}
@@ -126,7 +126,7 @@ export default function CreateActivity(props) {
               message={activityName + " created successfully."}
             />
           </div>
-          <div className="relative flex items-center justify-center  m-2">
+          <div className="relative flex items-center justify-center w-3/4 m-2">
             <RectangleBtn
               disabled={createButtonDisabled}
               type="submit"

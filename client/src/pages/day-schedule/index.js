@@ -104,7 +104,7 @@ function DaySchedule(props) {
       <Navbar />
       <section className="w-full quicksand-body">
         <div className="relative flex items-center justify-center h-16">
-          <h1 className="pacifico-title text-3xl">Today is the Day</h1>
+          <h1 className="pacifico-title text-3xl text-green-900">Today is the Day</h1>
         </div>
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="activity">
