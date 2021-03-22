@@ -119,7 +119,7 @@ function DaySchedule(props) {
                   return (
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
-                        <li
+                        <li className="items-center grid grid-cols-2 gap-1"
                           key={id}
                           ref={provided.innerRef}
                           {...provided.draggableProps}
@@ -131,24 +131,22 @@ function DaySchedule(props) {
                             key={activity._id}
                             data-test="day-schedule-activity"
                           >
-                            <div className="relative flex items-center justify-center h-16">
+                            <div className="relative flex items-center h-16">
                               <CircleButton
                                 id={id}
                                 activityType={activity.type}
                               />
-                              <p
-                                className="relative flex justify-center w-1/2 m-1 w-25 py-.5 px-4 border border-gray-400 rounded shadow p-1"
+                              <button
+                                className="bg-white flex-grow w-full mx-5 py-2 px-4 border border-gray-400 rounded shadow"
                                 data-id={id}
                                 id={id}
                                 onClick={handleOpenModal}
                               >
                                 {activity.name}
-                              </p>
-                              <Checkbox checked={() => checked(id)} />
+                              </button>
                             </div>
-                            {/* <Checkbox checked={() => checked(id)} /> */}
                           </div>
-                          <Checkbox checked={() => checked(id)} />
+                          <div className="items-center"><Checkbox checked={() => checked(id)} /></div>
                         </li>
                       )}
                     </Draggable>
