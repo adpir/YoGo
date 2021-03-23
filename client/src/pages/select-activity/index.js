@@ -16,7 +16,7 @@ export default function SelectActivity() {
             className="relative flex items-center justify-center h-16"
           >
             <button
-              className="bg-white w-3/6 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow"
+              className="bg-white w-1/2 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow"
               data-test="select-mind-activities"
             >
               MIND
@@ -27,7 +27,7 @@ export default function SelectActivity() {
             className="relative flex items-center justify-center h-16"
           >
             <button
-              className="bg-white w-3/6 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow"
+              className="bg-white w-1/2 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow"
               data-test="select-body-activities"
             >
               BODY
@@ -38,7 +38,7 @@ export default function SelectActivity() {
             className="relative flex items-center justify-center h-16"
           >
             <button
-              className="bg-white w-3/6 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow"
+              className="bg-white w-1/2 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow"
               data-test="select-social-activities"
             >
               SOCIAL
@@ -49,7 +49,7 @@ export default function SelectActivity() {
             className="relative flex items-center justify-center h-16"
           >
             <button
-              className="bg-white w-3/6 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow"
+              className="bg-white w-1/2 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow"
               data-test="select-all-activities"
             >
               ALL

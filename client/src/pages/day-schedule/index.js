@@ -137,7 +137,7 @@ function DaySchedule(props) {
                                 activityType={activity.type}
                               />
                               <button
-                                className="bg-white flex-grow w-full p-2 border border-gray-400 rounded shadow text-center"
+                                className="bg-white w-24 flex-grow p-2 rounded shadow text-center"
                                 data-id={id}
                                 id={id}
                                 onClick={handleOpenModal}

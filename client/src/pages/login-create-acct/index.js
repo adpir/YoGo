@@ -44,17 +44,17 @@ export default function LoginPage(props) {
       <>
         <div className="h-screen bkrd-1">
           <NavbarSignIn />
-          <div className="w-full quicksand-body">
+          <div className="w-full quicksand-body grid justify-items-center">
             <div className="relative flex items-center justify-center h-16">
-              <h1 className="pacifico-title text-3xl text-green-900 ">Take Care Of Yourself...</h1>
+              <h1 className="pacifico-title text-3xl text-green-900">Take Care Of Yourself...</h1>
             </div>
             <div className="relative flex items-center justify-center h-16">
-              <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+              <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 quicksand-body">
                 Sign in
             </h2>
             </div>
             <form
-              className="mt-8 space-y-6 m-5"
+              className="mt-8 space-y-6 m-5 w-1/2"
               onSubmit={(e) => handleSubmit(e)}
             >
               <input type="hidden" name="remember" value="true" />
@@ -123,13 +123,13 @@ export default function LoginPage(props) {
               <div>
                 <button
                   type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent rounded text-white bg-green-900 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   data-test="sign-in-button"
                 >
                   <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                     {/* <!-- Heroicon name: solid/lock-closed --> */}
                     <svg
-                      className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                      className="h-5 w-5 text-green-600 group-hover:text-green-400"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -146,23 +146,26 @@ export default function LoginPage(props) {
               </button>
             </div>
           </form>
-          <div className="relative flex items-center justify-center h-16">
+          <div className="relative flex items-center h-16">
+            <button className="bg-white w-48 mx-5 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow text-center">
             <Link
               to="/create-account"
-              className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow text-center"
+              className="w-full"
               data-test="create-account"
             >
               CREATE ACCOUNT
             </Link>
+            </button>
           </div>
           <div className="relative flex items-center justify-center h-16">
+            <button className="bg-white w-48 mx-5 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow text-center">
             <Link
               to="/create-or-select"
-              className="bg-white w-screen mx-5 hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow text-center"
               data-test="skip-login"
             >
               SKIP LOGIN
             </Link>
+            </button>
             </div>
           </div>
         </div>

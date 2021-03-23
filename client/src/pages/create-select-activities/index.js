@@ -27,7 +27,7 @@ function CreateOrSelect(props) {
             <div className="relative flex items-center justify-center h-16">
               <Link
                 to="/create-activity"
-                className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow"
+                className="bg-white w-3/4 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow text-center"
                 data-test="create-activity"
               >
                 CREATE
@@ -40,7 +40,7 @@ function CreateOrSelect(props) {
           <div className="relative flex items-center justify-center h-16">
             <Link
               to="/select-activity"
-              className="bg-white w-3/4 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow"
+              className="bg-white w-3/4 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow text-center"
               data-test="select-activity"
             >
               SELECT
@@ -50,7 +50,7 @@ function CreateOrSelect(props) {
             <div className="relative flex items-center justify-center h-16">
               <Link
                 to={"/user-schedule"}
-                className="bg-white w-screen mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow"
+                className="bg-white w-3/4 mx-20 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded shadow text-center"
                 data-test="user-activities"
               >
                 USER ACTIVITIES
