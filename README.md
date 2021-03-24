@@ -1,4 +1,4 @@
-    <h1 align="center"> :sloth: YOGO :sloth: </h1>
+<h1 align="center"> :sloth: YOGO :sloth: </h1>
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 ![React](https://img.shields.io/badge/React-violet.svg)
