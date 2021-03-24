@@ -1,4 +1,4 @@
-<h1 align="center"> :sparkles: YOGO :sparkles: </h1>
+    <h1 align="center"> :sloth: YOGO :sloth: </h1>
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 ![React](https://img.shields.io/badge/React-violet.svg)
@@ -6,20 +6,19 @@
 ![Express](https://img.shields.io/badge/Express-turquoise.svg)
 ![npm](https://img.shields.io/badge/npm-red.svg)
 ![json](https://img.shields.io/badge/json-green.svg)
-![node.js](https://img.shields.io/badge/node.js-darkblue.svg)
+![node.js](https://img.shields.io/badge/node.js-lightblue.svg)
 ![craco.config](https://img.shields.io/badge/craco.config-darkblue.svg)
-![bcrypt](https://img.shields.io/badge/bcrypt-darkblue.svg)
+![bcrypt](https://img.shields.io/badge/bcrypt-blue.svg)
 ![MongoDB](https://img.shields.io/badge/MongoDB-yellow.svg)
-![Mongoose](https://img.shields.io/badge/Mongoose-yellow.svg)
-![Heroku](https://img.shields.io/badge/Heroku-orange.svg)
-![cypress](https://img.shields.io/badge/cypress-darkblue.svg)
-![Terminal](https://img.shields.io/badge/terminal-darkblue.svg)
-![setupProxy](https://img.shields.io/badge/setupProxy-darkblue.svg)
-![Travis](https://img.shields.io/badge/Travis-darkblue.svg)
-![.eslint](https://img.shields.io/badge/.eslint-darkblue.svg)
-![API](https://img.shields.io/badge/API-darkblue.svg)
-![API](https://img.shields.io/badge/API-darkblue.svg)
-![VisualStudioCode](https://img.shields.io/badge/VisualStudioCode-darkblue.svg)
+![Mongoose](https://img.shields.io/badge/Mongoose-orange.svg)
+![Heroku](https://img.shields.io/badge/Heroku-purple.svg)
+![cypress](https://img.shields.io/badge/cypress-yellow.svg)
+![Terminal](https://img.shields.io/badge/terminal-violet.svg)
+![setupProxy](https://img.shields.io/badge/setupProxy-lightgreen.svg)
+![Travis](https://img.shields.io/badge/Travis-pink.svg)
+![.eslint](https://img.shields.io/badge/.eslint-green.svg)
+![API](https://img.shields.io/badge/API-red.svg)
+![VisualStudioCode](https://img.shields.io/badge/VisualStudioCode-lightgreen.svg)
 
 ### :bar_chart: Table of Contents:
 
@@ -36,10 +35,6 @@
 - [Contributing](#Contributing)
 
 - [Profile](#Profile)
-
-- [Team Members](#Team Members)
-
-- [License](#License)
 
 ### Application Requirements
 
@@ -76,8 +71,7 @@ As a user, I want an app that will help me prioritize and manage my self-care pr
 
 ### Visuals:
 
-![image]
-![Giphy]
+![image](./client/src/images/YOGO.jpg)
 
 ### Installation:
 
@@ -89,7 +83,7 @@ As a user, I want an app that will help me prioritize and manage my self-care pr
 
 ### Usage:
 
-:exclamation: `npm run start`
+:exclamation: `npm run start` make sure to also to do `npm run deploy` to make sure the app run correctly with React.
 
 ### Tools:
 
@@ -103,23 +97,37 @@ As a user, I want an app that will help me prioritize and manage my self-care pr
 | Express            | setupProxy    |
 | Git Hub            | Travis.yml    |
 | Terminal           | .eslint       |
-| Visual Studio Code | API           |
+| Visual Studio Code | Passport      |
 | JSON               | manifest.json |
 
 ### Contributing:
 
 :wave: Pull requests are welcome. For major changes,<br>
 Please open an issue first to discuss what you would like to change.<br>
-Please make sure to update tests as appropriate.
+Please make sure to update tests as appropriate.<br>
 
-### Teams Members:
+### Teams
+
+![image](./client/src/images/Jordon.png)Jordon Moses [Github](https://github.com/UrkelX)
+<br>
+
+![image](./client/src/images/James.png)James Gould
+[Github](https://github.com/nobleburgundy)<br>
+
+![image](./client/src/images/Tommy.png)Tommy Forde
+[Github](https://github.com/tforde4623)<br>
+
+![image](./client/src/images/Phillip.png)Phillip Merriman
+[Github](https://github.com/phillipmerriman)<br>
+
+![image](./client/src/images/Mae.png)Mae Kindler
+[Github](https://github.com/mkindler)<br>
+
+![image](./client/src/images/Alice.png)Alice Piar
+[Github](https://github.com/adpir)<br>
 
 ### Profile:
 
-:octocat: [GitHub]()<br>
+:octocat: [GitHub](https://github.com/tforde4623/YoGo)
 
-:purple_circle: [Heroku]()
-
-### License:
-
-:copyright: [MIT]() All rights reserved. :heart:
+:purple_circle: [Heroku](https://yogood.herokuapp.com/)
